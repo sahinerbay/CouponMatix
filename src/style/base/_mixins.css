@@ -21,3 +21,9 @@
         @mixin-content;
     }
 }
+
+@define-mixin clearfix {
+    display: table;
+    clear: both;
+    content: "";
+}

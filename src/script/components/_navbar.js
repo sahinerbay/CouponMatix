@@ -1,16 +1,13 @@
-// let navbar = document.createElement('div');
-// navbar.textContent = "hello world";
-// navbar.className = "navbar";
-
-// export {navbar}; 
-
-// let fragment = document.createDocumentFragment();
-// let para = document.createElement('p');
-// para.textContent = 'This is my list item number';
-
-// fragment.appendChild(para);
-// document.body.appendChild(fragment);
+import logo from '../../images/logo.png';
+import login from '../../images/login_icon.jpg';
 
 
+
+let loginIcon = new Image();
+loginIcon.src = login;
+
+let navbar__logo__login = document.querySelector('.navbar__top__login');
+
+navbar__logo__login.style.backgroundImage = `url(${login})`;
 
 
