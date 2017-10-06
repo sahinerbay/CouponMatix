@@ -3,6 +3,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -10,7 +11,6 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'build'),
-        
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -46,18 +46,6 @@ module.exports = {
                         }
                     ]
                 })
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [{
-                        loader: 'url-loader',
-                        options: {
-                            name: 'img/[name].[ext]',
-                            limit: 8192
-                        }
-                    },
-                    'image-webpack-loader'
-                ]
             }
         ]
     },
@@ -70,12 +58,8 @@ module.exports = {
 
         new CleanWebpackPlugin(['build']),
 
-        new BrowserSyncPlugin({
-            host: 'localhost',
-            port: 3000,
-            proxy: 'http://localhost:8080/'
-        }, {
-            reload: false
-        })
+        new CopyWebpackPlugin([{ from: './src/images', to: './img' }]),
+
+        
     ]
 };

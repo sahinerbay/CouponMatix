@@ -11,41 +11,48 @@
 
 <body>
 
-    <div class="navbar">
+    <div class="header">
 
-        <div class="navbar__top">
-
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-            <div class="navbar__top__login">
-                <div class="navbar__top__login__content">
-                    <a href="#about">Sign Up</a>
-                    <a href="#about">Login</a>
+        <div class="navbar row">
+            <div class="navbar__logo row__lg-3">
+                <img src="./img/logo.png" alt="">
+            </div>
+            <div class="row row__lg-9">
+                <div class="navbar__top row__lg-12">
+                    <a href="#home">Home</a>
+                    <a href="#news">News</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#about">About</a>
+                    <a href="javascript:void(0);" class="navbar__top__icon" onclick="myFunction()">&#9776;</a>
+                    <div class="navbar__top__login">
+                        <div class="navbar__top__login__content">
+                            <a href="#about">Sign Up</a>
+                            <a href="#about">Login</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row__lg-12">
+                    <img src="./img/468x60.png" alt="">
                 </div>
             </div>
         </div>
-    </div>
-    <div class="navbar__filter">
-        <div class="navbar__filter--content">
-            <div class="navbar__logo">
-                <img src="./img/logo.png" alt="">
-            </div>
-            <select id="country" name="country">
+        <div class="filterbar">
+            <div class="filterbar--content">
+
+                <select class="filterbar__select" name="country">
                     <option value="usa">Australia</option>
                     <option value="usa">Canada</option>
                     <option value="usa">USA</option>
                   </select>
-            <input class="navbar__filter--content__searchbar" type="text" name="search" placeholder="Search..">
-        </div>
+                <input class="filterbar__searchbar" type="text" name="search" placeholder="Search..">
+            </div>
 
+        </div>
     </div>
     <div class="wrapper">
 
         <div class="main">
-
+            <img src="./img/login_icon.jpg" alt="">
         </div>
     </div>
 </body>
