@@ -1,0 +1,63 @@
+{
+    "v0": {
+        "types": {
+            "1001": {
+                "title": "Printable Coupons",
+                "desc": "Find printable coupons for grocery and top brands and save hundreds of dollars on groceries every year with these great printable coupons.",
+                "main": "Today's Top Coupon Offers"
+            },
+            "2001": "free samples",
+            "3001": "giveaways"
+        },
+        "items": {
+            "1001": [
+                {
+                    "title": "Sensodyne toothpaste",
+                    "statement": "SAVE $1.00",
+                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
+                    "imageURL": "test.com",
+                    "link": "www.google.com"
+                },
+                {
+                    "title": "Sensodyne toothpaste",
+                    "statement": "SAVE $1.00",
+                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
+                    "imageURL": "test.com",
+                    "link": "www.google.com"
+                },
+                {
+                    "title": "Sensodyne toothpaste",
+                    "statement": "SAVE $1.00",
+                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
+                    "imageURL": "test.com",
+                    "link": "www.google.com"
+                },
+                {
+                    "title": "Sensodyne toothpaste",
+                    "statement": "SAVE $1.00",
+                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
+                    "imageURL": "test.com",
+                    "link": "www.google.com"
+                }
+            ],
+            "2001": [
+                {
+                    "cta": "SAVE $1.00",
+                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
+                    "id": "123",
+                    "imageURL": "test.com",
+                    "title": "Sensodyne toothpaste"
+                }
+            ],
+            "3001": [
+                {
+                    "cta": "SAVE $1.00",
+                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
+                    "id": "123",
+                    "imageURL": "test.com",
+                    "title": "Sensodyne toothpaste"
+                }
+            ]
+        }
+    }
+}

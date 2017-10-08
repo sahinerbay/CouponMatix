@@ -5,6 +5,13 @@
     &--gutter {
         padding-left: 20px;
     }
+
+    &--align-items {
+        @mixin align_items center
+    }
+    &--margin-bottom {
+        margin-bottom: 20px;
+    }
     
     @mixin extrasmall {
         &__xs-0 {
@@ -41,8 +48,16 @@
             width: 16.6%;
         }
 
+        &__lg-2--large {
+            width: 20%;
+        }
+
         &__lg-10 {
             width: 83.3%;
+        }
+
+        &__lg-10--small {
+            width: 80%;
         }
 
         &__lg-12 {
@@ -50,7 +65,4 @@
         }
     }
 
-    &--alignSelf {
-        @mixin align_self flex-end;
-    }
 }

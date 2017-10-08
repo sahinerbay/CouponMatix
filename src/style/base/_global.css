@@ -3,4 +3,6 @@
 }
 body {
     background: $secondaryColor;
+    font-size:62.5%;
+    font-family: "Raleway" helvetica;
 }

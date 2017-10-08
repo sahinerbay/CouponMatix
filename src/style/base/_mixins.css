@@ -28,8 +28,8 @@
     content: "";
 }
 
-@define-mixin align_content $value {
-    align-content: $value;
+@define-mixin align_items $value {
+    align-items: $value;
 }
 
 @define-mixin align_self $value {

@@ -1,6 +1,6 @@
-$primaryColor : rgba(10, 158, 10, 0.83);
+$primaryColor : #6A6;
 $secondaryColor: #fff;
 
 /*navbar*/
 $navbarLinkColor: #8c8888;
-$navBarHoverColor: #333333;
+$navBarHoverColor: rgba(10,158,10,.83);

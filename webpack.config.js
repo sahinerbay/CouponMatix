@@ -46,16 +46,45 @@ module.exports = {
                 }
                 ]
             })
+        },
+        {
+            test: /\.json$/,
+            loader: 'json-loader'
         }
         ]
     },
     plugins: [
         new ExtractTextPlugin("styles.css"),
         new CleanWebpackPlugin(['build']),
-        new HtmlWebpackPlugin({
-            //filename: 'index.html',
-            template: 'src/index.html',
-        }),
+        new HtmlWebpackPlugin(
+            {
+                template: 'src/views/index.html',
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {   
+                filename: 'coupons.html',
+                template: 'src/views/coupons.html',
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {   
+                filename: 'samples.html',
+                template: 'src/views/samples.html',
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {   
+                filename: 'about.html',
+                template: 'src/views/about.html',
+            }
+        ),
+        new HtmlWebpackPlugin(
+            {   
+                filename: 'giveaways.html',
+                template: 'src/views/giveaways.html',
+            }
+        ),
         new webpack.HotModuleReplacementPlugin(),
         new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
         new CopyWebpackPlugin([{ from: './src/images', to: './images' }]),

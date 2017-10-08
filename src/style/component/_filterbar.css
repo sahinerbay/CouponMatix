@@ -54,7 +54,7 @@
 
     @mixin large {
         &--content {
-            width: 60%;
+            width: 50%;
         }
 
         &__searchbar {
