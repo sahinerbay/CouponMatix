@@ -19,3 +19,4 @@ let getData = (type) => {
 getData('1001');
 
 
+

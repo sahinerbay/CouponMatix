@@ -9,10 +9,13 @@ let dom = function () {
     }
 
     let setTextContent = (el, txt) => {
-        let foundElement = document.querySelector(`.${el}`);
-        foundElement.textContent = txt;
+        let foundElement = document.querySelectorAll(`.${el}`);
+        console.log(foundElement)
+        for (let i = 0; i < foundElement.length; i++) {
+            foundElement[i].textContent = txt;
+        }
     }
-    
+
 
     let append = (parent, ...args) => {
         if (args.length > 1) {
