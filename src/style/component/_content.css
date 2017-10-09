@@ -1,9 +1,92 @@
 .content {
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
 
     &__galery {
         width: 100%;
     }
+
+    &__galery__info__title {
+        font-size: 1.2rem;
+    }
+
+    &__galery__info__description {
+        text-align: left;
+        font-size: .75rem;
+        line-height: 1.5;
+        letter-spacing: .03rem;
+    }
+
+    &__galery__offer {
+        border-top: 1px solid #c6c6c6;
+        padding-top: 20px;
+    }
+
+    &__galery__offer__top__frame {
+        text-align: center;
+    }
+
+    &__galery__offer__top__frame--image {
+        width: 100px;
+        height: 100px;
+    }
+
+    &__galery__offer__top__frame--image__link {
+        display: inline-block;
+    }
+
+    &__galery__offer__footer {
+        text-align: center;
+    }
+
+    &__galery__offer__footer__statement {
+        font-size: 1rem;
+        font-weight: 800;
+        color: #0d820c;
+    }
+
+    &__galery__offer__footer__statement--margin-bottom {
+        margin-bottom: 10px;
+    }
+
+    &__galery__offer__footer__description {
+        font-size: .75rem;
+        line-height: 1.5;
+        letter-spacing: .03rem;
+        min-height: 30px;
+    }
+
+    &__galery__offer__footer__description--margin-bottom {
+        margin-bottom: 10px;
+    }
+
+    &__galery__offer__footer__button {
+        width: 60%;
+        background-color: #54a54a;
+        margin: 0 auto;
+        min-height: 18px;
+        border-radius: 15px;
+    }
+
+    &__galery__offer__footer__button__link {
+        text-decoration: none;
+        display: block;
+        font-size: 1.2rem;
+        color: #fff;
+    }
+
+    @mixin small {
+        width: 90%;
+    }
+
+    @mixin medium {
+        width: 80%;
+    }
+
+    @mixin large {
+        width: 50%;
+    }
+
+    
 }
 

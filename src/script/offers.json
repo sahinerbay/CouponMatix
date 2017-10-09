@@ -2,7 +2,7 @@
     "v0": {
         "types": {
             "1001": {
-                "title": "Printable Coupons",
+                "tags": "Printable Coupons",
                 "desc": "Find printable coupons for grocery and top brands and save hundreds of dollars on groceries every year with these great printable coupons.",
                 "main": "Today's Top Coupon Offers"
             },
@@ -12,50 +12,78 @@
         "items": {
             "1001": [
                 {
-                    "title": "Sensodyne toothpaste",
+                    "tags": "ortega, taco shells, tortilla, mexican, smartsource",
                     "statement": "SAVE $1.00",
-                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
-                    "imageURL": "test.com",
-                    "link": "www.google.com"
+                    "description": "on any TWO (2) Ortega Products",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
+                    "link": "http://www.ortega.com/promotions/"
                 },
                 {
-                    "title": "Sensodyne toothpaste",
+                    "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",
                     "statement": "SAVE $1.00",
-                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
-                    "imageURL": "test.com",
-                    "link": "www.google.com"
+                    "description": "on any TWO (2) Las Palmas Products",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/laspalmas.jpg?alt=media&token=b80b7fdf-9993-4ead-9b55-1fef5a0f1179",
+                    "link": "http://www.laspalmassauces.com/coupons/"
                 },
                 {
-                    "title": "Sensodyne toothpaste",
-                    "statement": "SAVE $1.00",
-                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
-                    "imageURL": "test.com",
-                    "link": "www.google.com"
+                    "tags": "pirate's body, snacks, chips, healthy, smartsource",
+                    "statement": "SAVE $.75",
+                    "description": "on any ONE (1) Pirate's Booty Product",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/piratebrands.jpg?alt=media&token=f4cf7bf8-6514-40e0-9ce5-688eb8674c5d",
+                    "link": "http://www.piratebrands.com/coupons"
                 },
                 {
-                    "title": "Sensodyne toothpaste",
+                    "tags": "new york style, chips, crisps, smartsource, healthy, snacks",
+                    "statement": "SAVE $.75",
+                    "description": "on any ONE (1) New York Style Product",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/newyorkstyle.jpg?alt=media&token=1ad02334-79c5-4676-8147-0a06e91e0ed0",
+                    "link": "http://www.newyorkstyle.com/special-offers/"
+                },
+                {
+                    "tags": "cream of wheat, rice, healthy, smartsource, breakfast, porridge",
                     "statement": "SAVE $1.00",
-                    "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
-                    "imageURL": "test.com",
-                    "link": "www.google.com"
+                    "description": "on any TWO (2) Cream Of Wheat Products",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/creamofwheat.jpg?alt=media&token=87844dc4-b129-403d-abcc-696be6045d72",
+                    "link": "http://www.creamofwheat.com/promotions/"
+                },
+                {
+                    "tags": "flatout flatbread, healthy, pizza, wraps, hopster",
+                    "statement": "SAVE $1.00",
+                    "description": "on any ONE (1) Flatout Flatbread Product",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/flatout.jpg?alt=media&token=c06300ba-eabd-419f-9a83-bea53bc26220",
+                    "link": "http://www.flatoutbread.com/coupon/"
+                },
+                {
+                    "tags": "northland juice, smartsource, cranberry, raspberry",
+                    "statement": "SAVE $1.00",
+                    "description": "on any ONE (1) Northland Juice",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/northlandJuice.jpg?alt=media&token=d9013a71-9a5d-4b12-8d6e-8504f54fa386",
+                    "link": "https://www.northlandjuices.com/offers/"
+                },
+                {
+                    "tags": "Sunsweet, juice, dried fruit, smartsource, healthy",
+                    "statement": "SAVE $1.00",
+                    "description": "on any ONE (1) Sunsweet Product",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/sunsweet.jpg?alt=media&token=a7e879cd-ee13-4e31-89a4-5a31b3ed7236",
+                    "link": "http://sunsweet.com/print/coupons/"
                 }
             ],
             "2001": [
                 {
-                    "cta": "SAVE $1.00",
+                    "tags": "Sensodyne toothpaste",
+                    "statement": "SAVE $1.00",
                     "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
-                    "id": "123",
                     "imageURL": "test.com",
-                    "title": "Sensodyne toothpaste"
+                    "link": "www.google.com"
                 }
             ],
             "3001": [
                 {
-                    "cta": "SAVE $1.00",
+                    "tags": "Sensodyne toothpaste",
+                    "statement": "SAVE $1.00",
                     "description": "on any ONE (1) Sensodyne® toothpaste (excludes 0.8oz)",
-                    "id": "123",
                     "imageURL": "test.com",
-                    "title": "Sensodyne toothpaste"
+                    "link": "www.google.com"
                 }
             ]
         }

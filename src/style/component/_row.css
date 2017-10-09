@@ -6,6 +6,10 @@
         padding-left: 20px;
     }
 
+    &--align {
+        justify-content: center;
+    }
+
     &--align-items {
         @mixin align_items center
     }
@@ -28,6 +32,10 @@
             width: 16.6%;
         }
 
+        &__s-6 {
+            width: 50%;
+        }
+
         &__s-10 {
             width: 83.3%;
         }
@@ -38,6 +46,10 @@
     }
 
     @mixin medium {
+        &__md-4 {
+            width: 33.3%;
+        }
+
         &__md-12 {
             width: 100%;
         }

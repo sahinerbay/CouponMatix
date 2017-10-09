@@ -16,8 +16,8 @@ let createContent = function () {
         dom.append(contentGalery, contentGaleryInfo);
         dom.append(contentGaleryInfo, h2, para);
 
-        dom.setTextContent('content__galery__info__title', offer.title);
-        dom.setTextContent('content__galery__info__description', offer.desc);
+        dom.setTextContent('content__galery__info__title', offer.main, 0);
+        dom.setTextContent('content__galery__info__description', offer.desc, 0);
         
     };
 
@@ -25,29 +25,39 @@ let createContent = function () {
 
         let contentGalery = document.querySelector('.content__galery');
 
-        console.log(offer[3])
         for (let i = 0; i < offer.length; i++) {
-            let contentGaleryOffer = dom.createElementWithClassName('div', 'content__galery__offer row row__xs-12 row__s_6 row__md-4 row__lg-3');
-            let contentGaleryOfferTop = dom.createElementWithClassName('div', 'content__galery__offer__top');            
-            let contentGaleryOfferTopImage = dom.createElementWithClassName('div', 'content__galery__offer__top__image');
 
-            let contentGaleryOfferFooter = dom.createElementWithClassName('div', 'content__galery__offer__footer');            
-            let contentGaleryOfferFooterTitle = dom.createElementWithClassName('div', 'content__galery__offer__footer__title');
-            let contentGaleryOfferFooterStatement = dom.createElementWithClassName('div', 'content__galery__offer__footer__statement');
-            let contentGaleryOfferFooterDescription = dom.createElementWithClassName('div', 'content__galery__offer__footer__description');
-            
-            
-
-            dom.append(contentGaleryOfferTop, contentGaleryOfferTopImage);
-            dom.append(contentGaleryOfferFooter, contentGaleryOfferFooterTitle, contentGaleryOfferFooterStatement, contentGaleryOfferFooterDescription);
-            dom.append(contentGaleryOffer, contentGaleryOfferTop, contentGaleryOfferFooter);
+            let contentGaleryOffer = dom.createElementWithClassName('div', 'content__galery__offer row__xs-12 row__s-6 row__md-4 row__lg-3 row--margin-bottom');
             dom.append(contentGalery, contentGaleryOffer);
 
-            dom.setTextContent('content__galery__offer__footer__title', offer[i].title);
-            dom.setTextContent('content__galery__offer__footer__statement', offer[i].statement);
-            dom.setTextContent('content__galery__offer__footer__description', offer[i].description);
-        }
+            let contentGaleryOfferTop = dom.createElementWithClassName('div', 'content__galery__offer__top');            
+            let contentGaleryOfferTopFrame = dom.createElementWithClassName('div', 'content__galery__offer__top__frame');
+            let contentGaleryOfferTopFrameImage = dom.createElementWithClassName('img', 'content__galery__offer__top__frame--image');
+            let contentGaleryOfferTopFrameImageLink = dom.createElementWithClassName('a', 'content__galery__offer__top__frame--image__link');
+            contentGaleryOfferTopFrameImageLink.href = offer[i].link;
+            contentGaleryOfferTopFrameImageLink.setAttribute('target', '_blank');
+            contentGaleryOfferTopFrameImage.src = offer[i].imageURL;
+            dom.append(contentGaleryOfferTop, contentGaleryOfferTopFrame);
+            dom.append(contentGaleryOfferTopFrame, contentGaleryOfferTopFrameImageLink);
+            dom.append(contentGaleryOfferTopFrameImageLink, contentGaleryOfferTopFrameImage);
+            
 
+            let contentGaleryOfferFooter = dom.createElementWithClassName('div', 'content__galery__offer__footer');            
+            let contentGaleryOfferFooterStatement = dom.createElementWithClassName('div', 'content__galery__offer__footer__statement content__galery__offer__footer__statement--margin-bottom');
+            let contentGaleryOfferFooterDescription = dom.createElementWithClassName('div', 'content__galery__offer__footer__description content__galery__offer__footer__description--margin-bottom');
+            let contentGaleryOfferFooterButton = dom.createElementWithClassName('div', 'content__galery__offer__footer__button');
+            let contentGaleryOfferFooterButtonLink = dom.createElementWithClassName('a', 'content__galery__offer__footer__button__link');
+            contentGaleryOfferFooterButtonLink.href = offer[i].link;
+            contentGaleryOfferFooterButtonLink.textContent = "+";
+            contentGaleryOfferFooterButtonLink.setAttribute('target', '_blank');
+            dom.append(contentGaleryOfferFooter, contentGaleryOfferFooterStatement, contentGaleryOfferFooterDescription, contentGaleryOfferFooterButton);
+            dom.append(contentGaleryOffer, contentGaleryOfferTop, contentGaleryOfferFooter);
+            dom.append(contentGaleryOfferFooterButton, contentGaleryOfferFooterButtonLink);
+            
+            dom.setTextContent('content__galery__offer__footer__statement', offer[i].statement, i);
+            dom.setTextContent('content__galery__offer__footer__description', offer[i].description, i);
+                        
+        }
     }
 
     return {

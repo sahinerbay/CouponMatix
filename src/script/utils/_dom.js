@@ -6,16 +6,13 @@ let dom = function () {
         let element = document.createElement(el);
         element.className = className;
         return element;
-    }
+    };
 
-    let setTextContent = (el, txt) => {
+    let setTextContent = (el, txt, index) => {
         let foundElement = document.querySelectorAll(`.${el}`);
-        console.log(foundElement)
-        for (let i = 0; i < foundElement.length; i++) {
-            foundElement[i].textContent = txt;
-        }
-    }
+        foundElement[index].textContent = txt;
 
+    };
 
     let append = (parent, ...args) => {
         if (args.length > 1) {
