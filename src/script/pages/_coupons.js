@@ -1,7 +1,7 @@
-import dom from '../utils/_dom';
+import createContent from '../components/_content';
 
-// let url = 'https://couponmatix.firebaseio.com/v0/types/1001/title.json';
+let couponButton = document.querySelector('a[href="#coupons"]');
 
-// dom.getOffers(url).then((result)=>{
-//     console.log(result);
-// })
+couponButton.addEventListener('click', ()=>{
+    createContent.createPage(1001);
+});

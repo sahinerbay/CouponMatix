@@ -13,9 +13,9 @@ div.innerHTML = `
                         <div class="navbar__menu row row__xs-12 row__s-12 row__md-9 row__lg-10 row--gutter row--align-items">
                             <div class="navbar__menu__links">
                                 <div class="row__xs-12 row__s-12 row__m-12 row__lg-12">
-                                    <a href="/coupons.html">Coupons</a>
-                                    <a href="/samples.html">Samples</a>
-                                    <a href="/giveaways.html">Giveaways</a>
+                                    <a href="#coupons">Coupons</a>
+                                    <a  href="#samples">Samples</a>
+                                    <a  href="#giveaways">Giveaways</a>
                                     <a href="/about.html">About</a>
                                     <a href="javascript:void(0);" class="navbar__menu__links__hamburgerIcon" >&#9776;</a>
                                 </div>

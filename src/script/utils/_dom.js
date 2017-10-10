@@ -8,7 +8,7 @@ let dom = function () {
         return element;
     };
 
-    let setTextContent = (el, txt, index) => {
+    let setTextContent = (el, txt, index=0) => {
         let foundElement = document.querySelectorAll(`.${el}`);
         foundElement[index].textContent = txt;
 

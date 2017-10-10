@@ -5,32 +5,34 @@ let createContent = function () {
     let content = document.querySelector('.content');
 
     let galeryInfo = (offer) => {
-        
-        let contentGalery = dom.createElementWithClassName('div', 'content__galery row');
+
+        let contentGalery = dom.createElementWithClassName('div', `content__galery ${offer.classname}__galery row`);
         let contentGaleryInfo = dom.createElementWithClassName('div', 'content__galery__info row__lg-12');
 
-        let h2 = dom.createElementWithClassName('h2', 'content__galery__info__title');
-        let para = dom.createElementWithClassName('p', 'content__galery__info__description');
+        let h2 = dom.createElementWithClassName('h2', `content__galery__info__title ${offer.classname}__title`);
+        let para = dom.createElementWithClassName('p', `content__galery__info__description ${offer.classname}__description`);
 
         dom.append(content, contentGalery);
         dom.append(contentGalery, contentGaleryInfo);
         dom.append(contentGaleryInfo, h2, para);
 
-        dom.setTextContent('content__galery__info__title', offer.main, 0);
-        dom.setTextContent('content__galery__info__description', offer.desc, 0);
-        
+        dom.setTextContent(`${offer.classname}__title`, offer.main);
+        dom.setTextContent(`${offer.classname}__description`, offer.desc);
+
     };
 
     let galery = (offer) => {
 
-        let contentGalery = document.querySelector('.content__galery');
+        let offerClassname = offer[0].classname;
+
+        let contentGalery = document.querySelector(`.${offerClassname}__galery`);
 
         for (let i = 0; i < offer.length; i++) {
 
             let contentGaleryOffer = dom.createElementWithClassName('div', 'content__galery__offer content__galery__offer--padding row__xs-12 row__s-6 row__md-4 row__lg-3');
             dom.append(contentGalery, contentGaleryOffer);
 
-            let contentGaleryOfferTop = dom.createElementWithClassName('div', 'content__galery__offer__top');            
+            let contentGaleryOfferTop = dom.createElementWithClassName('div', 'content__galery__offer__top');
             let contentGaleryOfferTopFrame = dom.createElementWithClassName('div', 'content__galery__offer__top__frame');
             let contentGaleryOfferTopFrameImage = dom.createElementWithClassName('img', 'content__galery__offer__top__frame--image');
             let contentGaleryOfferTopFrameImageLink = dom.createElementWithClassName('a', 'content__galery__offer__top__frame--image__link');
@@ -40,11 +42,11 @@ let createContent = function () {
             dom.append(contentGaleryOfferTop, contentGaleryOfferTopFrame);
             dom.append(contentGaleryOfferTopFrame, contentGaleryOfferTopFrameImageLink);
             dom.append(contentGaleryOfferTopFrameImageLink, contentGaleryOfferTopFrameImage);
-            
 
-            let contentGaleryOfferFooter = dom.createElementWithClassName('div', 'content__galery__offer__footer');            
-            let contentGaleryOfferFooterStatement = dom.createElementWithClassName('div', 'content__galery__offer__footer__statement content__galery__offer__footer__statement--margin-bottom');
-            let contentGaleryOfferFooterDescription = dom.createElementWithClassName('div', 'content__galery__offer__footer__description content__galery__offer__footer__description--margin-bottom');
+
+            let contentGaleryOfferFooter = dom.createElementWithClassName('div', 'content__galery__offer__footer');
+            let contentGaleryOfferFooterStatement = dom.createElementWithClassName('div', `${offerClassname}__offer__statement content__galery__offer__footer__statement content__galery__offer__footer__statement--margin-bottom`);
+            let contentGaleryOfferFooterDescription = dom.createElementWithClassName('div', `${offerClassname}__offer__description content__galery__offer__footer__description content__galery__offer__footer__description--margin-bottom`);
             let contentGaleryOfferFooterButton = dom.createElementWithClassName('div', 'content__galery__offer__footer__button');
             let contentGaleryOfferFooterButtonLink = dom.createElementWithClassName('a', 'content__galery__offer__footer__button__link');
             contentGaleryOfferFooterButtonLink.href = offer[i].link;
@@ -53,16 +55,37 @@ let createContent = function () {
             dom.append(contentGaleryOfferFooter, contentGaleryOfferFooterStatement, contentGaleryOfferFooterDescription, contentGaleryOfferFooterButton);
             dom.append(contentGaleryOffer, contentGaleryOfferTop, contentGaleryOfferFooter);
             dom.append(contentGaleryOfferFooterButton, contentGaleryOfferFooterButtonLink);
-            
-            dom.setTextContent('content__galery__offer__footer__statement', offer[i].statement, i);
-            dom.setTextContent('content__galery__offer__footer__description', offer[i].description, i);
-                        
+
+            dom.setTextContent(`${offerClassname}__offer__statement`, offer[i].statement, i);
+            dom.setTextContent(`${offerClassname}__offer__description`, offer[i].description, i);
+
         }
+    }
+
+    let createSidePage = (type) => {
+        //Empty Content Container --NB! this can be improved by using while and removeChild
+        document.querySelector('.content').innerHTML = "";
+
+        let url = `https://couponmatix.firebaseio.com/v0/types/${type}.json`;
+
+        dom.getOffers(url)
+            .then((result) => {
+
+                let offer = JSON.parse(result);
+                createContent.galeryInfo(offer);
+                return dom.getOffers(`https://couponmatix.firebaseio.com/v0/items/${type}.json`)
+            })
+            .then((result) => {
+
+                let offerDetails = JSON.parse(result);
+                createContent.galery(offerDetails);
+            })
     }
 
     return {
         galeryInfo: galeryInfo,
-        galery: galery
+        galery: galery,
+        createPage: createSidePage
     }
 }();
 
