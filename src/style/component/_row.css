@@ -3,7 +3,7 @@
     flex-wrap: wrap;
 
     &--gutter {
-        padding-left: 20px;
+        padding-left: 0;
     }
 
     &--align {
@@ -13,8 +13,8 @@
     &--align-items {
         @mixin align_items center
     }
-    &--margin-bottom {
-        margin-bottom: 20px;
+    &--padding-bottom {
+        padding-bottom: 20px;
     }
     
     @mixin extrasmall {
@@ -25,6 +25,7 @@
         &__xs-12 {
             width: 100%;
         }
+        
     }
 
     @mixin small {
@@ -46,8 +47,29 @@
     }
 
     @mixin medium {
+
+        &--gutter {
+            padding-left: 2vw;
+        }
+
+        &__md-2 {
+            width: 16.6%;
+        }
+
+        &__md-3 {
+            width: 25%;
+        }
+
         &__md-4 {
             width: 33.3%;
+        }
+
+        &__md-9 {
+            width: 75%;
+        }
+
+        &__md-10 {
+            width: 83.3%;
         }
 
         &__md-12 {
@@ -56,6 +78,11 @@
     }
 
     @mixin large {
+
+        &--gutter {
+            padding-left: 5vw;
+        }
+
         &__lg-2 {
             width: 16.6%;
         }

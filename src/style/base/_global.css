@@ -6,3 +6,18 @@ body {
     font-size:62.5%;
     font-family: "Raleway" helvetica;
 }
+
+.header {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    width: 100%;
+}
+
+.wrapper--margin-top {
+    margin-top: 100px;
+
+    @mixin medium {
+        margin-top: 150px;
+    }
+}

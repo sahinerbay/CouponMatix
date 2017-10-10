@@ -2,63 +2,62 @@
     width: 100%;
     left: 0;
     right: 0;
-    height: 50px;
     background: $primaryColor;
    
     &--content {
         margin: 0 auto;
-        width: 60%;
-        height: 50px;
+        width: $forExtraSmall;
+        min-height: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
     &__select {
-        @mixin input;
-        padding: 5px 13px;
-    }
-    &__searchbar {
-        width: 70px;
-        @mixin input;
-        padding: 5px 13px;
+        @mixin input $fontSize, $paddingSelectDropDown;
     }
 
-    @mixin extrasmall {
-        &--content {
-            width: 90%;
-        }
+    &__searchbar {
+        @mixin input $fontSize, $paddingSearchBar;
     }
 
     @mixin small {
         &--content {
-            width: 90%;
+            width: $forSmall;
         }
 
-        &__searchbar {
-            width: 85px;
+        &__select, &__searchbar {
+            width: 130px;
         }
     }
 
     @mixin medium {
         &--content {
-            width: 80%;
+            width: $forMedium;
         }
-        &__select {
-            @mixin input
-        }
-        &__searchbar {
-            width: 110px;
+        &__select, &__searchbar {
+            width: 160px;
         }
         
     }
 
     @mixin large {
         &--content {
-            width: 50%;
+            width: $forLarge;
         }
 
-        &__searchbar {
-            width: 140px;
+        &__select, &__searchbar {
+            width: 170px;
+        }
+    }
+
+    @mixin extralarge {
+        &--content {
+            width: $forExtraLarge;
+        }
+
+        &__select, &__searchbar {
+            width: 200px;
         }
     }
 }

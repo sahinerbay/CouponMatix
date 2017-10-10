@@ -1,6 +1,37 @@
 $primaryColor : #6A6;
 $secondaryColor: #fff;
 
-/*navbar*/
+/* -Screen-Width- */
+$forExtraSmall: 95%;
+$forSmall: 90%;
+$forMedium: 80%;
+$forLarge: 60%;
+$forExtraLarge: 50%;
+
+/* -Navbar- */
 $navbarLinkColor: #8c8888;
 $navBarHoverColor: rgba(10,158,10,.83);
+
+/* -Filter Bar- */
+/* --Search Bar & Select Dropdown-- */
+$fontSize: .9rem;
+$paddingSelectDropDown: 5px 10px;
+$paddingSearchBar: 5px 0 5px 10px;
+
+/* -Content- */
+/* --Description & Title-- */
+$fontSizeContentTitle: 1.2rem;
+$fontSizeContentDescription: .9rem;
+
+
+/* -Content__Offer__Footer- */
+/* --Description & Statement-- */
+$fontSizeOfferFooterStatement: 1.1rem;
+$fontSizeOfferFooterDescription: .8rem;
+$fontColorOfferFooterStatement: #0d820c;
+
+/* ---Content__Offer__Footer__Link---  */
+$linkDefault: #6A6;
+$linkHover: #247424;
+
+

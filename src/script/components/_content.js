@@ -27,7 +27,7 @@ let createContent = function () {
 
         for (let i = 0; i < offer.length; i++) {
 
-            let contentGaleryOffer = dom.createElementWithClassName('div', 'content__galery__offer row__xs-12 row__s-6 row__md-4 row__lg-3 row--margin-bottom');
+            let contentGaleryOffer = dom.createElementWithClassName('div', 'content__galery__offer content__galery__offer--padding row__xs-12 row__s-6 row__md-4 row__lg-3');
             dom.append(contentGalery, contentGaleryOffer);
 
             let contentGaleryOfferTop = dom.createElementWithClassName('div', 'content__galery__offer__top');            
