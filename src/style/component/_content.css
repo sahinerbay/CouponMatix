@@ -58,6 +58,19 @@
         @mixin offerButton;
     }
 
+    &__galery__viewAll {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__galery__viewAll--margin {
+        margin: 20px 0 70px;
+    }
+
+    &__galery__viewAll--link {
+        @mixin viewAllButton;
+    }
+
     @mixin small {
         width: $forSmall;
         &__galery__offer__top__frame--image {

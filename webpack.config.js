@@ -63,26 +63,8 @@ module.exports = {
         ),
         new HtmlWebpackPlugin(
             {   
-                filename: 'coupons.html',
-                template: 'src/views/coupons.html',
-            }
-        ),
-        new HtmlWebpackPlugin(
-            {   
-                filename: 'samples.html',
-                template: 'src/views/samples.html',
-            }
-        ),
-        new HtmlWebpackPlugin(
-            {   
                 filename: 'about.html',
                 template: 'src/views/about.html',
-            }
-        ),
-        new HtmlWebpackPlugin(
-            {   
-                filename: 'giveaways.html',
-                template: 'src/views/giveaways.html',
             }
         ),
         new webpack.HotModuleReplacementPlugin(),

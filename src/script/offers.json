@@ -2,21 +2,18 @@
     "v0": {
         "types": {
             "1001": {
-                "tags": "Printable Coupons",
                 "desc": "Find printable coupons for grocery and top brands and save hundreds of dollars on groceries every year with these great printable coupons.",
                 "main": "Today's Top Coupon Offers",
                 "classname": "coupons"
             },
             "2001": {
-                "tags": "Printable Coupons",
-                "desc": "Find printable coupons for grocery and top brands and save hundreds of dollars on groceries every year with these great printable coupons.",
-                "main": "Free Samples",
+                "desc": "Looking for free samples from your favorite brands? View all free product samples delivered by mail for free. Please allow 6-8 weeks for delivery. ",
+                "main": "Recently Added Free Samples",
                 "classname": "samples"
             },
             "3001": {
-                "tags": "Printable Coupons",
-                "desc": "Find printable coupons for grocery and top brands and save hundreds of dollars on groceries every year with these great printable coupons.",
-                "main": "Giveaways",
+                "desc": "Win prizes for free by checking out daily updated list of giveaways, contents and sweepstakes. Enter more to increase your chance to win free stuff!",
+                "main": "Online Giveaways, Contests and Sweepstakes",
                 "classname": "giveaways"
             }
         },
@@ -28,7 +25,8 @@
                     "description": "on any TWO (2) Ortega Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
                     "link": "http://www.ortega.com/promotions/",
-                    "classname": "coupons"
+                    "classname": "coupons",
+                    "category": "foods"
                 },
                 {
                     "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",
@@ -36,7 +34,8 @@
                     "description": "on any TWO (2) Las Palmas Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/laspalmas.jpg?alt=media&token=b80b7fdf-9993-4ead-9b55-1fef5a0f1179",
                     "link": "http://www.laspalmassauces.com/coupons/",
-                    "classname": "coupons"
+                    "classname": "coupons",
+                    "category": "foods"
                 },
                 {
                     "tags": "pirate's body, snacks, chips, healthy, smartsource",
@@ -44,7 +43,8 @@
                     "description": "on any ONE (1) Pirate's Booty Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/piratebrands.jpg?alt=media&token=f4cf7bf8-6514-40e0-9ce5-688eb8674c5d",
                     "link": "http://www.piratebrands.com/coupons",
-                    "classname": "coupons"
+                    "classname": "coupons",
+                    "category": "foods"
                 },
                 {
                     "tags": "new york style, chips, crisps, smartsource, healthy, snacks",
@@ -52,7 +52,8 @@
                     "description": "on any ONE (1) New York Style Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/newyorkstyle.jpg?alt=media&token=1ad02334-79c5-4676-8147-0a06e91e0ed0",
                     "link": "http://www.newyorkstyle.com/special-offers/",
-                    "classname": "coupons"
+                    "classname": "coupons",
+                    "category": "foods"
                 },
                 {
                     "tags": "cream of wheat, rice, healthy, smartsource, breakfast, porridge",
@@ -60,7 +61,8 @@
                     "description": "on any TWO (2) Cream Of Wheat Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/creamofwheat.jpg?alt=media&token=87844dc4-b129-403d-abcc-696be6045d72",
                     "link": "http://www.creamofwheat.com/promotions/",
-                    "classname": "coupons"
+                    "classname": "coupons",
+                    "category": "foods"
                 },
                 {
                     "tags": "flatout flatbread, healthy, pizza, wraps, hopster",
@@ -68,7 +70,8 @@
                     "description": "on any ONE (1) Flatout Flatbread Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/flatout.jpg?alt=media&token=c06300ba-eabd-419f-9a83-bea53bc26220",
                     "link": "http://www.flatoutbread.com/coupon/",
-                    "classname": "coupons"
+                    "classname": "coupons",
+                    "category": "foods"
                 },
                 {
                     "tags": "northland juice, smartsource, cranberry, raspberry",
@@ -76,7 +79,8 @@
                     "description": "on any ONE (1) Northland Juice",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/northlandJuice.jpg?alt=media&token=d9013a71-9a5d-4b12-8d6e-8504f54fa386",
                     "link": "https://www.northlandjuices.com/offers/",
-                    "classname": "coupons"
+                    "classname": "coupons",
+                    "category": "beverages"
                 },
                 {
                     "tags": "Sunsweet, juice, dried fruit, smartsource, healthy",
@@ -84,7 +88,80 @@
                     "description": "on any ONE (1) Sunsweet Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/sunsweet.jpg?alt=media&token=a7e879cd-ee13-4e31-89a4-5a31b3ed7236",
                     "link": "http://sunsweet.com/print/coupons/",
-                    "classname": "coupons"
+                    "classname": "coupons",
+                    "category": "foods"
+                },
+                {
+                    "tags": "Enjoy Life Foods, chocolate bars, cookies, gluten-free, vegan, smartsource, healthy",
+                    "statement": "SAVE $1.50",
+                    "description": "on any TWO (2) Enjoy Life Products",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/enjoylifefoods.jpg?alt=media&token=2e6fcee2-1706-4a43-9a9a-12eaeeb817f4",
+                    "link": "https://enjoylifefoods.com/coupons/",
+                    "classname": "coupons",
+                    "category": "foods"
+                },
+                {
+                    "tags": "Irish Spring, body wash, soap, bricks",
+                    "statement": "SAVE $.75",
+                    "description": "on any ONE (1) Irish Spring Body Wash",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/irishspring.jpg?alt=media&token=5ff4b3a8-d1d8-44b8-869f-d169ff39ca4e",
+                    "link": "http://www.irishspring.com/coupons",
+                    "classname": "coupons",
+                    "category": "personal care"
+                },
+                {
+                    "tags": "Dr. Scholl's, foot care, smartsource",
+                    "statement": "SAVE Up To $10.00",
+                    "description": "on any Dr. Scholl's Products",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/drscholls.jpg?alt=media&token=57506b1e-d607-45a5-bbbd-bf2ed8a8b007",
+                    "link": "https://www.drscholls.com/coupons/",
+                    "classname": "coupons",
+                    "category": "personal care"
+                },
+                {
+                    "tags": "Hefty, trash bags, smartsource",
+                    "statement": "SAVE Up To $4.00",
+                    "description": "on any Hefty Products",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/hefty.jpg?alt=media&token=cffa1f7d-69ca-47eb-8b62-b0cab596e4f0",
+                    "link": "http://www.hefty.com/promotions/coupons/",
+                    "classname": "coupons",
+                    "category": "household"
+                },
+                {
+                    "tags": "Nature Valley, cereal, granola bars, healthy",
+                    "statement": "SAVE $.75",
+                    "description": "on any ONE (1) Nature Valley Product",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/naturevalley.jpg?alt=media&token=927a4be1-966e-45eb-9b3c-acc4c5f868d1",
+                    "link": "http://www.naturevalley.com/coupons/",
+                    "classname": "coupons",
+                    "category": "food"
+                },
+                {
+                    "tags": "PetArmor, pet care, bricks",
+                    "statement": "SAVE $2.00",
+                    "description": "on any ONE (1) PetArmor Plus Product",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/petarmor.jpg?alt=media&token=6ef709c3-d297-4849-b2f9-662e65dfa2eb",
+                    "link": "https://www.petarmor.com/special-offers/",
+                    "classname": "coupons",
+                    "category": "pet care"
+                },
+                {
+                    "tags": "crest, toothpaste, mouthwash, whitestrips, bricks",
+                    "statement": "SAVE Up To $5.00",
+                    "description": "on any Crest toothpaste, mouthwash or whitestrips",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/crest.jpg?alt=media&token=a1eaabfb-a23f-41b3-a550-f9138d341150",
+                    "link": "https://crest.com/en-us/coupons",
+                    "classname": "coupons",
+                    "category": "personal care"
+                },
+                {
+                    "tags": "pedigree, dog food, dog treats, bricks",
+                    "statement": "SAVE $1.00",
+                    "description": "on any TWO (2) Pedigree Treats Products",
+                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/pedigree.jpg?alt=media&token=2e39107c-c96e-48c6-879b-63ba9fea9390",
+                    "link": "https://www.pedigree.com/special-offers",
+                    "classname": "coupons",
+                    "category": "pet care"
                 }
             ],
             "2001": [
@@ -94,7 +171,8 @@
                     "description": "on any TWO (2) Ortega Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
                     "link": "http://www.ortega.com/promotions/",
-                    "classname": "samples"
+                    "classname": "samples",
+                    "category": "foods"
                 },
                 {
                     "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",
@@ -102,7 +180,8 @@
                     "description": "on any TWO (2) Las Palmas Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/laspalmas.jpg?alt=media&token=b80b7fdf-9993-4ead-9b55-1fef5a0f1179",
                     "link": "http://www.laspalmassauces.com/coupons/",
-                    "classname": "samples"
+                    "classname": "samples",
+                    "category": "foods"
                 },
                 {
                     "tags": "pirate's body, snacks, chips, healthy, smartsource",
@@ -110,7 +189,8 @@
                     "description": "on any ONE (1) Pirate's Booty Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/piratebrands.jpg?alt=media&token=f4cf7bf8-6514-40e0-9ce5-688eb8674c5d",
                     "link": "http://www.piratebrands.com/coupons",
-                    "classname": "samples"
+                    "classname": "samples",
+                    "category": "foods"
                 },
                 {
                     "tags": "new york style, chips, crisps, smartsource, healthy, snacks",
@@ -118,7 +198,8 @@
                     "description": "on any ONE (1) New York Style Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/newyorkstyle.jpg?alt=media&token=1ad02334-79c5-4676-8147-0a06e91e0ed0",
                     "link": "http://www.newyorkstyle.com/special-offers/",
-                    "classname": "samples"
+                    "classname": "samples",
+                    "category": "foods"
                 },
                 {
                     "tags": "cream of wheat, rice, healthy, smartsource, breakfast, porridge",
@@ -126,7 +207,8 @@
                     "description": "on any TWO (2) Cream Of Wheat Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/creamofwheat.jpg?alt=media&token=87844dc4-b129-403d-abcc-696be6045d72",
                     "link": "http://www.creamofwheat.com/promotions/",
-                    "classname": "samples"
+                    "classname": "samples",
+                    "category": "foods"
                 },
                 {
                     "tags": "flatout flatbread, healthy, pizza, wraps, hopster",
@@ -134,7 +216,8 @@
                     "description": "on any ONE (1) Flatout Flatbread Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/flatout.jpg?alt=media&token=c06300ba-eabd-419f-9a83-bea53bc26220",
                     "link": "http://www.flatoutbread.com/coupon/",
-                    "classname": "samples"
+                    "classname": "samples",
+                    "category": "foods"
                 },
                 {
                     "tags": "northland juice, smartsource, cranberry, raspberry",
@@ -142,7 +225,8 @@
                     "description": "on any ONE (1) Northland Juice",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/northlandJuice.jpg?alt=media&token=d9013a71-9a5d-4b12-8d6e-8504f54fa386",
                     "link": "https://www.northlandjuices.com/offers/",
-                    "classname": "samples"
+                    "classname": "samples",
+                    "category": "foods"
                 },
                 {
                     "tags": "Sunsweet, juice, dried fruit, smartsource, healthy",
@@ -150,7 +234,8 @@
                     "description": "on any ONE (1) Sunsweet Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/sunsweet.jpg?alt=media&token=a7e879cd-ee13-4e31-89a4-5a31b3ed7236",
                     "link": "http://sunsweet.com/print/coupons/",
-                    "classname": "samples"
+                    "classname": "samples",
+                    "category": "foods"
                 }
             ],
             "3001": [
@@ -160,7 +245,8 @@
                     "description": "on any TWO (2) Ortega Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
                     "link": "http://www.ortega.com/promotions/",
-                    "classname": "giveaways"
+                    "classname": "giveaways",
+                    "category": "foods"
                 },
                 {
                     "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",
@@ -168,7 +254,8 @@
                     "description": "on any TWO (2) Las Palmas Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/laspalmas.jpg?alt=media&token=b80b7fdf-9993-4ead-9b55-1fef5a0f1179",
                     "link": "http://www.laspalmassauces.com/coupons/",
-                    "classname": "giveaways"
+                    "classname": "giveaways",
+                    "category": "foods"
                 },
                 {
                     "tags": "pirate's body, snacks, chips, healthy, smartsource",
@@ -176,7 +263,8 @@
                     "description": "on any ONE (1) Pirate's Booty Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/piratebrands.jpg?alt=media&token=f4cf7bf8-6514-40e0-9ce5-688eb8674c5d",
                     "link": "http://www.piratebrands.com/coupons",
-                    "classname": "giveaways"
+                    "classname": "giveaways",
+                    "category": "foods"
                 },
                 {
                     "tags": "new york style, chips, crisps, smartsource, healthy, snacks",
@@ -184,7 +272,8 @@
                     "description": "on any ONE (1) New York Style Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/newyorkstyle.jpg?alt=media&token=1ad02334-79c5-4676-8147-0a06e91e0ed0",
                     "link": "http://www.newyorkstyle.com/special-offers/",
-                    "classname": "giveaways"
+                    "classname": "giveaways",
+                    "category": "foods"
                 },
                 {
                     "tags": "cream of wheat, rice, healthy, smartsource, breakfast, porridge",
@@ -192,7 +281,8 @@
                     "description": "on any TWO (2) Cream Of Wheat Products",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/creamofwheat.jpg?alt=media&token=87844dc4-b129-403d-abcc-696be6045d72",
                     "link": "http://www.creamofwheat.com/promotions/",
-                    "classname": "giveaways"
+                    "classname": "giveaways",
+                    "category": "foods"
                 },
                 {
                     "tags": "flatout flatbread, healthy, pizza, wraps, hopster",
@@ -200,7 +290,8 @@
                     "description": "on any ONE (1) Flatout Flatbread Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/flatout.jpg?alt=media&token=c06300ba-eabd-419f-9a83-bea53bc26220",
                     "link": "http://www.flatoutbread.com/coupon/",
-                    "classname": "giveaways"
+                    "classname": "giveaways",
+                    "category": "foods"
                 },
                 {
                     "tags": "northland juice, smartsource, cranberry, raspberry",
@@ -208,7 +299,8 @@
                     "description": "on any ONE (1) Northland Juice",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/northlandJuice.jpg?alt=media&token=d9013a71-9a5d-4b12-8d6e-8504f54fa386",
                     "link": "https://www.northlandjuices.com/offers/",
-                    "classname": "giveaways"
+                    "classname": "giveaways",
+                    "category": "foods"
                 },
                 {
                     "tags": "Sunsweet, juice, dried fruit, smartsource, healthy",
@@ -216,7 +308,8 @@
                     "description": "on any ONE (1) Sunsweet Product",
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/sunsweet.jpg?alt=media&token=a7e879cd-ee13-4e31-89a4-5a31b3ed7236",
                     "link": "http://sunsweet.com/print/coupons/",
-                    "classname": "giveaways"
+                    "classname": "giveaways",
+                    "category": "foods"
                 }
             ]
         }

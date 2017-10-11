@@ -8,10 +8,16 @@ let dom = function () {
         return element;
     };
 
-    let setTextContent = (el, txt, index=0) => {
+    let setTextContent = (el, txt, index = 0) => {
         let foundElement = document.querySelectorAll(`.${el}`);
         foundElement[index].textContent = txt;
 
+    };
+
+    let setAttributes = (el, attrsObject) => {
+        for (var key in attrsObject) {
+            el.setAttribute(key, attrsObject[key]);
+        }
     };
 
     let append = (parent, ...args) => {
@@ -21,6 +27,12 @@ let dom = function () {
             }
         } else parent.appendChild(args[0])
     };
+
+    let getElement = (el) => document.querySelector(`.${el}`);
+
+    let removeElement = (el) => {
+        el.parentElement.removeChild(el);
+    }
 
     let getOffers = (url) => {
 
@@ -49,6 +61,9 @@ let dom = function () {
         createElement: createElement,
         createElementWithClassName: createElementWithClassName,
         setTextContent: setTextContent,
+        setAttributes: setAttributes,
+        removeElement: removeElement,
+        getElement: getElement,
         append: append,
         getOffers: getOffers,
     }
