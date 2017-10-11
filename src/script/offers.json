@@ -26,7 +26,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
                     "link": "http://www.ortega.com/promotions/",
                     "classname": "coupons",
-                    "category": "foods"
+                    "category": "foods",
+                    "id": 1001
                 },
                 {
                     "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",
@@ -172,7 +173,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
                     "link": "http://www.ortega.com/promotions/",
                     "classname": "samples",
-                    "category": "foods"
+                    "category": "foods",
+                    "id": 2001
                 },
                 {
                     "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",
@@ -246,7 +248,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
                     "link": "http://www.ortega.com/promotions/",
                     "classname": "giveaways",
-                    "category": "foods"
+                    "category": "foods",
+                    "id": 3001
                 },
                 {
                     "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",

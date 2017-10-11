@@ -68,7 +68,7 @@ let filterBar = function () {
         dom.getOffers(url)
             .then((result) => {
 
-                //PARSE JSON INTO JS OBJECT
+                // PARSE JSON INTO JS OBJECT //
                 let offerDetails = JSON.parse(result);
 
                 // COUNT CATEGORIES AND SAVE THEM IN CATEGORY OBJECT //
@@ -81,7 +81,9 @@ let filterBar = function () {
                 // INSERT CATEGORIES INTO SELECT DROPDOWN //
                 for (let cat in category) {
                     let option = document.createElement('option');
-                    option.value = cat;
+                    if(cat == 'Show All') {
+                        option.value = 'showAll';
+                    } else option.value = cat;
                     option.textContent = `${cat} (${category[cat]})`;
                     filterbarSelect.appendChild(option);
                 }

@@ -70,5 +70,3 @@ let dom = function () {
 }();
 
 export default dom;
-
-
