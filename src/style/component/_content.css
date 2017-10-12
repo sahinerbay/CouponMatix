@@ -2,6 +2,27 @@
     width: $forExtraSmall;
     margin: 0 auto;
 
+    &__ad {
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    &__ad--margin-top {
+        margin-top: 120px;
+    }
+
+    &__ad__frame--margin-bottom {
+        margin-bottom: 15px;
+    }
+
+    &__ad__frame:last-child {
+        display: none;
+    }
+
+    &__ad__frame--image {
+        max-width: 100%;
+    }
+
     &__galery__info__title {
         @mixin contentInfo $fontSizeContentTitle;
     }
@@ -81,6 +102,15 @@
 
     @mixin medium {
         width: $forMedium;
+
+        &__ad--margin-top {
+            margin-top: 170px;
+        }
+
+        &__ad__frame:last-child {
+            display: inline-block;
+        }
+
         &__galery__offer__top__frame--image {
             width: 120px;
             height: 120px;
@@ -89,6 +119,7 @@
 
     @mixin large {
         width: $forLarge;
+
         &__galery__offer__top__frame--image {
             width: 140px;
             height: 140px;
@@ -102,7 +133,5 @@
             height: 150px;
         }
     }
-
-    
 }
 

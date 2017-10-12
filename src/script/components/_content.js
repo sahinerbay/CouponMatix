@@ -1,4 +1,5 @@
 import dom from '../utils/_dom';
+import filterbar from './_filterbar';
 
 let createContent = function () {
 
@@ -14,7 +15,40 @@ let createContent = function () {
     // RETRIEVE CONTENT ELEMENT TO BE FILLED BELOW //
     let content = document.querySelector('.content');
 
+    let ads = () => {
+        let contentAd = dom.createElementWithClassName('div', 'content__ad content__ad--margin-top row');
+        dom.append(content, contentAd);
 
+        let advertisements = [
+            {
+                imgUrl: '/images/zyrtec.jpg',
+                linkUrl: 'https://www.zyrtec.com/savings'
+            },
+            {
+                imgUrl: '/images/bodyshop.jpg',
+                linkUrl: 'https://www.thebodyshop.com/en-us/lybc-marketing'
+            },
+            {
+                imgUrl: '/images/extra.jpg',
+                linkUrl: 'http://www.extragum.com/'
+            }
+        ];
+
+        for (let ads in advertisements) {
+            let contentAdFrame = dom.createElementWithClassName('div', 'content__ad__frame content__ad__frame--margin-bottom row__xs-12 row__s-6 row__md-4 row__lg-4'),
+                contentAdFrameImage = dom.createElementWithClassName('img', 'content__ad__frame--image'),
+                contentAdFrameImageLink = dom.createElementWithClassName('a', 'content__ad__frame--image__link');
+
+            // SET URL LINK INTO IMAGE //
+            contentAdFrameImageLink.href = advertisements[ads].linkUrl;
+            contentAdFrameImageLink.setAttribute('target', '_blank');
+            contentAdFrameImage.src = advertisements[ads].imgUrl;
+
+            dom.append(contentAd, contentAdFrame);
+            dom.append(contentAdFrame, contentAdFrameImageLink);
+            dom.append(contentAdFrameImageLink, contentAdFrameImage);
+        }
+    };
 
     // CREATE INFO / DESCRIPTION SECTION //
     // 'OFFER' PARAMETER IS A RESPONSE 'TYPES' OF JSON REQUEST //
@@ -121,8 +155,9 @@ let createContent = function () {
             dom.setTextContent(`${offerClassname}--link`, "View All");
             let hello = document.querySelector(`.${offerClassname}--link`);
 
-            hello.addEventListener('click', (e)=> {
+            hello.addEventListener('click', (e) => {
                 e.preventDefault();
+                filterbar.select(offerTypeId);
                 createContent.createPage(offerTypeId);
             })
         }
@@ -172,20 +207,20 @@ let createContent = function () {
             })
     };
 
-    
+
 
     // GENERATE CONTENT-GALERY-OFFERS AND CONTENT-GALERY-INFO BY INVOKING ABOVE FUNCTIONS //
     // IT'S USED FOR ONLY MAIN PAGE //
     // NOT FOR SECTIONS (COUPONS, SAMPLES, GIVEAWAYS) //
     let createContentMainPage = () => {
         let url = `https://couponmatix.firebaseio.com/v0/types.json`;
-        
+
         dom.getOffers(url)
             .then((result) => {
 
                 // PARSE JSON INTO JS OBJECT //
                 let offer = JSON.parse(result);
-                
+
                 // LOOP THROUGH 'offer' OBJECTS PROPERTIES //
                 // GENERATES ALL THREE SECTIONS (COUPONS, SAMPLES, GIVEAWAYS) //
                 for (let prop in offer) {
@@ -196,20 +231,21 @@ let createContent = function () {
                     // SENDS REUQEST FOR CONTENT-GALERY-OFFER DETAILS //
                     dom.getOffers(`https://couponmatix.firebaseio.com/v0/items/${prop}.json`)
                         .then((result) => {
-                            
+
                             // PARSE JSON INTO JS OBJECT //
                             let offerDetails = JSON.parse(result);
 
                             // LIMIT HOW MANY OFFERS WILL BE RENDERED ON MAIN PAGE FOR EACH SECTION (COUPONS, SAMPLES, GIVEAWAYS) //
-                            let limitedOffers = offerDetails.slice(0,4);
+                            let limitedOffers = offerDetails.slice(0, 4);
                             createContent.galery(limitedOffers, true);
                         })
-                        
+
                 }// LOOP ENDS//
             })
     };
 
     return {
+        ads: ads,
         galeryInfo: galeryInfo,
         galery: galery,
         createPage: createContentSidePage,

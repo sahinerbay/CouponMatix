@@ -8,5 +8,7 @@ filterbar.content();
 // GENERATE FILTERBAR-SEARCHBAR //
 filterbar.searchbar();
 
+createContent.ads();
+
 // GENERATE CONTENT-GALERY INFO & DESCRIPTION & OFFERS
 createContent.createContentMainPage();
