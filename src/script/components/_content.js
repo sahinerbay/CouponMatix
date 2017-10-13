@@ -1,5 +1,6 @@
 import dom from '../utils/_dom';
 import filterbar from './_filterbar';
+import createFooter from './_footer';
 
 let createContent = function () {
 
@@ -59,7 +60,7 @@ let createContent = function () {
         // THIS WILL HELP US TO RETRIVE THESE ELEMENTS LATER EASILY //
         let contentGalery = dom.createElementWithClassName('div', `content__galery ${offer.classname}__galery row`),
             contentGaleryInfo = dom.createElementWithClassName('div', 'content__galery__info row__lg-12'),
-            h2 = dom.createElementWithClassName('h2', `content__galery__info__title ${offer.classname}__title`),
+            h2 = dom.createElementWithClassName('h2', `content__galery__info__title content__galery__info__title--box-shadow ${offer.classname}__title`),
             para = dom.createElementWithClassName('p', `content__galery__info__description ${offer.classname}__description`);
 
         // INSERT INFO & DESCRIPTION SECTION INTO CONTENT //
@@ -223,25 +224,32 @@ let createContent = function () {
 
                 // LOOP THROUGH 'offer' OBJECTS PROPERTIES //
                 // GENERATES ALL THREE SECTIONS (COUPONS, SAMPLES, GIVEAWAYS) //
-                for (let prop in offer) {
+                // RETURNS PROMISE BECAUSE WE NEED FOOTER TO LOAD AFTER THE CONTENT IS LOADED //
+                let p = new Promise(function (resolve, reject) {
+                    for (let prop in offer) {
 
-                    // GENERATE CONTENT-GALERY-INFO FOR INFO & DESCRIPTION //
-                    createContent.galeryInfo(offer[prop]);
+                        // GENERATE CONTENT-GALERY-INFO FOR INFO & DESCRIPTION //
+                        createContent.galeryInfo(offer[prop]);
 
-                    // SENDS REUQEST FOR CONTENT-GALERY-OFFER DETAILS //
-                    dom.getOffers(`https://couponmatix.firebaseio.com/v0/items/${prop}.json`)
-                        .then((result) => {
+                        // SENDS REUQEST FOR CONTENT-GALERY-OFFER DETAILS //
+                        dom.getOffers(`https://couponmatix.firebaseio.com/v0/items/${prop}.json`)
+                            .then((result) => {
 
-                            // PARSE JSON INTO JS OBJECT //
-                            let offerDetails = JSON.parse(result);
+                                // PARSE JSON INTO JS OBJECT //
+                                let offerDetails = JSON.parse(result);
 
-                            // LIMIT HOW MANY OFFERS WILL BE RENDERED ON MAIN PAGE FOR EACH SECTION (COUPONS, SAMPLES, GIVEAWAYS) //
-                            let limitedOffers = offerDetails.slice(0, 4);
-                            createContent.galery(limitedOffers, true);
-                        })
+                                // LIMIT HOW MANY OFFERS WILL BE RENDERED ON MAIN PAGE FOR EACH SECTION (COUPONS, SAMPLES, GIVEAWAYS) //
+                                let limitedOffers = offerDetails.slice(0, 4);
+                                createContent.galery(limitedOffers, true);
+                                resolve('success');
+                            })
 
-                }// LOOP ENDS//
-            })
+
+                    }// LOOP ENDS//
+                });
+
+                p.then(()=> createFooter());
+            });
     };
 
     return {

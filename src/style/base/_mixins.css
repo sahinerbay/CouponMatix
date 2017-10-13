@@ -37,6 +37,11 @@
     align-self: $value;
 }
 
+@define-mixin gradient {
+    background: $primaryColor;
+    background: linear-gradient(270deg, $primaryColor, $primaryHelper);
+}
+
 @define-mixin link $fontSize {
     position: relative;
     color: $navbarLinkColor;
@@ -47,6 +52,16 @@
     white-space: nowrap;
     text-transform: uppercase;
     transition: all 1s ease;
+    display: none;
+
+    &:hover:after {
+        content: "";
+        border-bottom: 1px solid $navBarHoverColor;
+        position:absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 10px;
+    }
 }
 
 /* -Filter Bar Select Dropdown and Search Bar- */
@@ -61,10 +76,12 @@
 }
 
 /* -Content Description and Title- */
-@define-mixin contentInfo $fontSize {
+@define-mixin contentInfo $fontSize, $textAlign {
     font-size: $fontSize;
     line-height: 1.5;
     letter-spacing: .03rem;
+    padding: 3px 10px;
+    text-align: $textAlign;
 }
 
 /* -Content__Offer__Footer Description and Title- */
@@ -119,4 +136,27 @@
       box-shadow: 0 2px #666;
       transform: translateY(2px);
     }
+}
+
+@define-mixin boxShadow {
+    position:relative;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    &:before, &:after
+        {
+            content:"";
+            position:absolute;
+            z-index:-1;
+            box-shadow:0 0 20px rgba(0,0,0,0.8);
+            top:50%;
+            bottom:0;
+            left:10px;
+            right:10px;
+            border-radius:100px / 10px;
+        }
+    &:after
+        {
+            right:10px;
+            left:auto;
+            transform:skew(8deg) rotate(3deg);
+        }
 }

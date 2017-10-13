@@ -1,4 +1,5 @@
 $primaryColor : #6A6;
+$primaryHelper: #1d976c;
 $secondaryColor: #fff;
 
 /* -Screen-Width- */
@@ -16,12 +17,14 @@ $navBarHoverColor: rgba(10,158,10,.83);
 /* --Search Bar & Select Dropdown-- */
 $fontSize: .9rem;
 $paddingSelectDropDown: 5px 10px;
-$paddingSearchBar: 5px 0 5px 10px;
+$paddingSearchBar: 8px 0 8px 10px;
 
 /* -Content- */
 /* --Description & Title-- */
 $fontSizeContentTitle: 1.2rem;
 $fontSizeContentDescription: .9rem;
+$justify: justify;
+$center: center;
 
 
 /* -Content__Offer__Footer- */

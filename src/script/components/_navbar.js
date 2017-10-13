@@ -10,7 +10,7 @@ dom.append(document.body, header);
 
 ///////////////////////////
 // CREATE NAVBAR ELEMENT //
-let navbar = dom.createElementWithClassName('div', 'navbar row');
+let navbar = dom.createElementWithClassName('div', 'navbar navbar--margin-bottom row');
 // APPEND NAVBAR INTO HEADER //
 dom.append(header, navbar);
 
@@ -42,7 +42,12 @@ dom.append(navbarMenu, navbarMenuLinks);
 dom.append(navbarMenuLinks, navbarMenuLinksRow);
 
 // ATTRIBUTES FOR MENU LINKS //
-let linksArr = [{
+let linksArr = [
+    {
+        'href': '/',
+        'text': 'home'
+    },
+    {
         'href': '#coupons',
         'text': 'coupons'
     },
@@ -53,12 +58,7 @@ let linksArr = [{
     {
         'href': '#giveaways',
         'text': 'giveaways'
-    },
-    {
-        'href': '#about',
-        'text': 'about'
     }
-
 ];
 
 // CREATE NAVBAR--MENU--LINKS //
@@ -70,20 +70,38 @@ for (let attributes in linksArr) {
     dom.append(navbarMenuLinksRow, navbarMenuLinksRowA);
 }
 
+// CREATE MOBILE-LOGO //
+let mobileLogoFrame = dom.createElementWithClassName('div', 'navbar__menu__links__mobileLogo-frame'),
+    mobileLogoImage = dom.createElementWithClassName('img', 'navbar__menu__links__mobileLogo-image');
+
+mobileLogoImage.src = "/images/logo--mobile.jpg";
+
+// INSERT LOGO INTO NAVBAR--MENU--LINKS
+dom.append(mobileLogoFrame, mobileLogoImage);
+navbarMenuLinksRow.insertBefore(mobileLogoFrame, navbarMenuLinksRow.firstElementChild);
+
+
 // CREATE HAMBURGER ICON //
 let navbarMenuLinksRowHamburger = dom.createElementWithClassName('a', 'navbar__menu__links__hamburgerIcon');
 navbarMenuLinksRowHamburger.innerHTML = "&#9776;";
-dom.append(navbarMenuLinksRow, navbarMenuLinksRowHamburger)
+dom.append(navbarMenuLinksRow, navbarMenuLinksRowHamburger);
 
-
+// RETRIEVE HAMBURGER ICON LINK AND MENU //
 let hamburgerIcon = document.querySelector('.navbar__menu__links__hamburgerIcon'),
-    menu = document.querySelector(".navbar__menu__links");
+    menu = document.querySelector(".navbar__menu__links"),
+    wrapper = document.getElementsByClassName('wrapper');
 
-hamburgerIcon.addEventListener('click', () => {
-    console.log(menu.className)
+
+// HIDE/SHOW MENU LINKS WHEN YOU CLICK ON HAMBURGER MENU //
+hamburgerIcon.addEventListener('click', (event) => {
+    const wrapperClass = wrapper[0].className;
     if (menu.className === "navbar__menu__links") {
         menu.className += " responsive";
+        wrapper[0].className += " wrapper--margin-top-extra";
+        console.log(event.target)
+        console.log(event.currentTarget)
     } else {
         menu.className = "navbar__menu__links";
+        wrapper[0].className = 'wrapper wrapper--margin-top';
     }
 });

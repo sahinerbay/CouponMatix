@@ -11,7 +11,7 @@ let filterBar = function () {
 
         // CREATE PARENT FILTER BAR ELEMENT(DIV) AND ITS ONLY CHILD ELEMENT(DIV) WITH CLASSNAMES //
         let filterbar = dom.createElementWithClassName('div', 'filterbar'),
-            filterbarContent = dom.createElementWithClassName('div', 'filterbar--content');
+            filterbarContent = dom.createElementWithClassName('div', 'filterbar--content filterbar--min-height filterbar--align-items');
 
         filterbarContent.innerHTML = "";
 
@@ -36,13 +36,17 @@ let filterBar = function () {
         let filterSearchAttributes = {
             'type': 'text',
             'name': 'search',
-            'placeholder': 'Search..'
+            'value': 'Search For Coupons: Yoplait, Ziploc, Downy, Detergent...'
         };
         dom.setAttributes(filterbarSearch, filterSearchAttributes);
 
         // INSERT SEARCH BAR INTO FILTER BAR //        
         let filterbarContent = dom.getElement('filterbar--content');
         dom.append(filterbarContent, filterbarSearch);
+
+        // CREATE SEARCH BAR ICON //
+        let filterbarSearchIcon = dom.createElementWithClassName('span', 'filterbar__searchbar__icon');
+        dom.append(filterbarContent, filterbarSearchIcon);
     };
 
     // FUNCTION TO GENERATE SELECT DROPDOWN //
