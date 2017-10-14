@@ -55,6 +55,12 @@
         @mixin contentInfo $fontSizeContentDescription, $justify;
     }
 
+    &__galery__container {
+        width: 100%;
+        display: inherit;
+        flex-wrap: wrap;
+    }
+
     &__galery__offer {
         border-top: 1px solid #c6c6c6;
     }

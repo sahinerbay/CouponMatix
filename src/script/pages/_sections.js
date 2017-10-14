@@ -26,7 +26,7 @@ for (let element of navLinks) {
         event.preventDefault();
 
         // CREATE THE CONTENT BASED ON TYPE ID//
-        filterbar.select(element.type);
+        //filterbar.select(element.type);
         createContent.createPage(element.type);
         createContent.sideAd();
 

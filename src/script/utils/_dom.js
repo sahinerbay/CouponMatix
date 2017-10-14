@@ -34,6 +34,12 @@ let dom = function () {
         el.parentElement.removeChild(el);
     }
 
+    let removeAllChildren = (node) => {
+        while (node.hasChildNodes()) {
+            node.removeChild(node.lastChild);
+        }
+    };
+
     let getOffers = (url) => {
 
         return new Promise(function (resolve, reject) {
@@ -63,6 +69,7 @@ let dom = function () {
         setTextContent: setTextContent,
         setAttributes: setAttributes,
         removeElement: removeElement,
+        removeAllChildren: removeAllChildren,
         getElement: getElement,
         append: append,
         getOffers: getOffers,
