@@ -8,23 +8,32 @@
     }
 
     &__ad--margin-top {
-        margin-top: 80px;
+        margin-top: 120px;
     }
 
     &__ad__frame--margin-bottom {
-        margin-bottom: 15px;
+        margin: 0 auto 15px auto;
     }
 
-    &__ad__frame:nth-child(2) {
-        display: none;
-    }
-
-    &__ad__frame:last-child {
+    &__ad__frame:not(:first-child) {
         display: none;
     }
 
     &__ad__frame--image {
         max-width: 100%;
+    }
+
+    &__ad__frame--image__link {
+        display: inline-block;
+        transition: transform .5s ease-out;
+        
+        &:hover {
+            transform: scale(1.009,1.009);
+        }
+    }
+
+    &__galery--margin-bottom {
+        margin-bottom: 35px;
     }
 
     &__galery__info__title {
@@ -54,6 +63,10 @@
         padding: 20px 0;
     }
 
+    &__galery__offer__top--margin-bottom {
+        margin-bottom: 15px;
+    }
+
     &__galery__offer__top__frame {
         text-align: center;
     }
@@ -61,6 +74,10 @@
     &__galery__offer__top__frame--image {
         width: 100px;
         height: 100px;
+        transition: .5s all;
+        &:hover {
+            transform: scale(1.02,1.02);
+        }
     }
 
     &__galery__offer__top__frame--image__link {
@@ -71,23 +88,9 @@
         text-align: center;
     }
 
-    &__galery__offer__footer__statement {
-        @mixin offerFooterInfo $fontSizeOfferFooterStatement;
-        font-weight: 800;
-        color: $fontColorOfferFooterStatement;
-    }
-
-    &__galery__offer__footer__statement--margin-bottom {
-        margin-bottom: 10px;
-    }
-
     &__galery__offer__footer__description {
         @mixin offerFooterInfo $fontSizeOfferFooterDescription;
         min-height: 37px;
-    }
-
-    &__galery__offer__footer__description--margin-bottom {
-        margin-bottom: 10px;
     }
 
     &__galery__offer__footer__button__link {
@@ -99,12 +102,12 @@
         text-align: center;
     }
 
-    &__galery__viewAll--margin {
-        margin: 20px 0 70px;
+    &__galery__viewAll--margin-top {
+        margin-top: 15px;
     }
 
     &__galery__viewAll--link {
-        @mixin viewAllButton;
+        @mixin button $secondaryColor, $primaryColor, $primaryHelper, $primaryHelper;
     }
 
     @mixin small {

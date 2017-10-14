@@ -4,9 +4,9 @@
 @import './base/_mixins.css';
 @import './base/_global.css';
 
+@import './component/_button.css';
 @import './component/_navbar.css';
 @import './component/_filterbar.css';
 @import './component/_row.css';
-@import './component/_banner.css';
 @import './component/_content.css';
 @import './component/_footer.css';

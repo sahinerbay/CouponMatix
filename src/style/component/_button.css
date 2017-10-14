@@ -1,0 +1,45 @@
+@define-mixin button $primaryColor, $primaryHelper, $primaryHelper, $primaryHelper {
+    
+        overflow: hidden;
+        border: 3px solid $primaryHelper;
+        color: $primaryHelper;
+        background: none;
+        cursor: pointer;
+        padding: 10px 35px;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: .03rem;
+        font-size: 1rem;
+        font-weight: 700;
+        outline: none;
+        position: relative;
+        transition: all 0.3s;
+        text-decoration: none;
+        &:hover {
+            color: $primaryColor;
+            &:after {
+                height: 260%;
+                opacity: 1;
+            }
+        }
+        &:active {
+            color: $primaryColor;
+            &:after {
+                height: 400%;
+                opacity: 1;
+            }
+        }
+        &:after {
+            width: 100%;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            background: $primaryHelper;
+            opacity: 0;
+            transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(45deg);
+            content: '';
+            position: absolute;
+            z-index: -1;
+            transition: all 0.3s;
+        }
+}

@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
     background: $secondaryColor;
     font-size:62.5%;
@@ -26,8 +30,8 @@ body:before {
     z-index: 999;
 }
 
-.wrapper--margin-top {
-    margin-top: 80px;
+.wrapper--margin {
+    margin: 80px 0 225px;
     
     @mixin medium {
         margin-top: 150px;

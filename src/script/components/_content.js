@@ -1,12 +1,13 @@
 import dom from '../utils/_dom';
 import filterbar from './_filterbar';
 import createFooter from './_footer';
+import templateAds from '../utils/_ads';
 
 let createContent = function () {
 
 
     // CREATE WRAPPER ELEMENT(DIV) AND ITS CHILD CONTENT ELEMENT(DIV) WITH CLASSNAMES //
-    let wrapper = dom.createElementWithClassName('div', 'wrapper wrapper--margin-top'),
+    let wrapper = dom.createElementWithClassName('div', 'wrapper wrapper--margin'),
         contentEl = dom.createElementWithClassName('div', 'content');
 
     // INSERT WRAPPER AND ITS ONLY CHILD CONTENT ELEMENT INTO DOM //
@@ -16,40 +17,57 @@ let createContent = function () {
     // RETRIEVE CONTENT ELEMENT TO BE FILLED BELOW //
     let content = document.querySelector('.content');
 
+
+
+    // GENERATE 3 X ADS FOR MAIN PAGE ONLY //
     let ads = () => {
         let contentAd = dom.createElementWithClassName('div', 'content__ad content__ad--margin-top row');
         dom.append(content, contentAd);
 
-        let advertisements = [
-            {
-                imgUrl: '/images/zyrtec.jpg',
-                linkUrl: 'https://www.zyrtec.com/savings'
-            },
-            {
-                imgUrl: '/images/bodyshop.jpg',
-                linkUrl: 'https://www.thebodyshop.com/en-us/lybc-marketing'
-            },
-            {
-                imgUrl: '/images/extra.jpg',
-                linkUrl: 'http://www.extragum.com/'
-            }
-        ];
+        for (let numberOfAdSlot = 0; numberOfAdSlot < 3; numberOfAdSlot++) {
 
-        for (let ads in advertisements) {
+            let randNo = Math.floor(Math.random() * 14);
+
             let contentAdFrame = dom.createElementWithClassName('div', 'content__ad__frame content__ad__frame--margin-bottom row__xs-12 row__s-6 row__md-4 row__lg-4'),
                 contentAdFrameImage = dom.createElementWithClassName('img', 'content__ad__frame--image'),
                 contentAdFrameImageLink = dom.createElementWithClassName('a', 'content__ad__frame--image__link');
 
             // SET URL LINK INTO IMAGE //
-            contentAdFrameImageLink.href = advertisements[ads].linkUrl;
+            contentAdFrameImageLink.href = templateAds.medium[randNo].linkUrl;
             contentAdFrameImageLink.setAttribute('target', '_blank');
-            contentAdFrameImage.src = advertisements[ads].imgUrl;
+            contentAdFrameImage.src = templateAds.medium[randNo].imgUrl;
 
             dom.append(contentAd, contentAdFrame);
             dom.append(contentAdFrame, contentAdFrameImageLink);
             dom.append(contentAdFrameImageLink, contentAdFrameImage);
         }
     };
+
+
+
+    // CREATE 1 X AD FOR SIDE PAGES //
+    let sideAd = () => {
+        let contentAd = dom.createElementWithClassName('div', 'content__ad content__ad--margin-top row');
+        dom.append(content, contentAd);
+
+        let randNo = Math.floor(Math.random() * 6);
+
+        let contentAdFrame = dom.createElementWithClassName('div', 'content__ad__frame content__ad__frame--margin-bottom row__xs-12'),
+            contentAdFrameImage = dom.createElementWithClassName('img', 'content__ad__frame--image'),
+            contentAdFrameImageLink = dom.createElementWithClassName('a', 'content__ad__frame--image__link');
+
+        // SET URL LINK INTO IMAGE //
+        contentAdFrameImageLink.href = templateAds.large[randNo].linkUrl;
+        contentAdFrameImageLink.setAttribute('target', '_blank');
+        contentAdFrameImage.src = templateAds.large[randNo].imgUrl;
+
+        dom.append(contentAd, contentAdFrame);
+        dom.append(contentAdFrame, contentAdFrameImageLink);
+        dom.append(contentAdFrameImageLink, contentAdFrameImage);
+
+    }
+
+
 
     // CREATE INFO / DESCRIPTION SECTION //
     // 'OFFER' PARAMETER IS A RESPONSE 'TYPES' OF JSON REQUEST //
@@ -58,7 +76,7 @@ let createContent = function () {
         // CREATE INFO & DESCRIPTION SECTION WITH H2 AND PARAGRAPH FOR EACH SECTION(COUPONS, SAMPLES, GIVEAWAYS) //
         // ASSIGN SPECIFIC CLASS NAMES DYNAMICALLY //
         // THIS WILL HELP US TO RETRIVE THESE ELEMENTS LATER EASILY //
-        let contentGalery = dom.createElementWithClassName('div', `content__galery ${offer.classname}__galery row`),
+        let contentGalery = dom.createElementWithClassName('div', `content__galery content__galery--margin-bottom ${offer.classname}__galery row`),
             contentGaleryInfo = dom.createElementWithClassName('div', 'content__galery__info row__lg-12'),
             h2 = dom.createElementWithClassName('h2', `content__galery__info__title content__galery__info__title--box-shadow ${offer.classname}__title`),
             para = dom.createElementWithClassName('p', `content__galery__info__description ${offer.classname}__description`);
@@ -96,7 +114,7 @@ let createContent = function () {
             dom.append(contentGalery, contentGaleryOffer);
 
             // GENERATE TOP PART (IMAGE & ITS FRAME) OF EACH OFFER // 
-            let contentGaleryOfferTop = dom.createElementWithClassName('div', 'content__galery__offer__top'),
+            let contentGaleryOfferTop = dom.createElementWithClassName('div', 'content__galery__offer__top content__galery__offer__top--margin-bottom'),
                 contentGaleryOfferTopFrame = dom.createElementWithClassName('div', 'content__galery__offer__top__frame'),
                 contentGaleryOfferTopFrameImage = dom.createElementWithClassName('img', 'content__galery__offer__top__frame--image'),
                 contentGaleryOfferTopFrameImageLink = dom.createElementWithClassName('a', 'content__galery__offer__top__frame--image__link');
@@ -114,10 +132,9 @@ let createContent = function () {
 
             // GENERATE FOOTER PART (STATEMENT, DESCRIPTION, BUTTON) OF EACH OFFER // 
             let contentGaleryOfferFooter = dom.createElementWithClassName('div', 'content__galery__offer__footer'),
-                contentGaleryOfferFooterStatement = dom.createElementWithClassName('div', `${offerClassname}__offer__statement content__galery__offer__footer__statement content__galery__offer__footer__statement--margin-bottom`),
-                contentGaleryOfferFooterDescription = dom.createElementWithClassName('div', `${offerClassname}__offer__description content__galery__offer__footer__description content__galery__offer__footer__description--margin-bottom`),
+                contentGaleryOfferFooterDescription = dom.createElementWithClassName('div', `${offerClassname}__offer__description content__galery__offer__footer__description`),
                 contentGaleryOfferFooterButton = dom.createElementWithClassName('div', 'content__galery__offer__footer__button'),
-                contentGaleryOfferFooterButtonLink = dom.createElementWithClassName('a', 'content__galery__offer__footer__button__link');
+                contentGaleryOfferFooterButtonLink = dom.createElementWithClassName('a', `${offerClassname}__link content__galery__offer__footer__button__link`);
 
             // SET URL LINK INTO BUTTON //
             contentGaleryOfferFooterButtonLink.href = offer[i].link;
@@ -126,20 +143,21 @@ let createContent = function () {
 
             // APPEND FOOTER PART (STATEMENT, DESCRIPTION, BUTTON) OFFER INTO CONTENT-GALERY-OFFER //
             dom.append(contentGaleryOfferFooterButton, contentGaleryOfferFooterButtonLink);
-            dom.append(contentGaleryOfferFooter, contentGaleryOfferFooterStatement, contentGaleryOfferFooterDescription, contentGaleryOfferFooterButton);
+            dom.append(contentGaleryOfferFooter, contentGaleryOfferFooterDescription, contentGaleryOfferFooterButton);
             dom.append(contentGaleryOffer, contentGaleryOfferFooter);
 
             // SET STATEMENT & DESCRIPTION OF EACH OFFER VIA JSON CLASSNAME DYNAMICALLY BASED ON WHICH SECTION (COUPONS, SAMPLES, GIVEAWAYS) //
-            dom.setTextContent(`${offerClassname}__offer__statement`, offer[i].statement, i);
+            dom.setTextContent(`${offerClassname}__link`, offer[i].statement, i);
             dom.setTextContent(`${offerClassname}__offer__description`, offer[i].description, i);
 
         }//END OF LOOP//
+
 
         // GENERATE VIEW LINK IF ITS MAIN PAGE //
         if (isMainPage) {
 
             // GENERATE VIEW LINK ELEMENT WITH CLASSNAMES //
-            let contentGaleryViewAllContainer = dom.createElementWithClassName('div', 'content__galery__viewAll content__galery__viewAll--margin'),
+            let contentGaleryViewAllContainer = dom.createElementWithClassName('div', 'content__galery__viewAll content__galery__viewAll--margin-top'),
                 contentGaleryViewAllLink = dom.createElementWithClassName('a', `content__galery__viewAll--link ${offerClassname}--link`);
 
             // SET ATTRIBUTES OF VIEW LINK ELEMENT //
@@ -171,6 +189,11 @@ let createContent = function () {
     // NOT USED FOR MAIN PAGE //
     let createContentSidePage = (type, filterQuery = null) => {
 
+        let footerEl = document.querySelector('.footer');
+        if (footerEl !== null) {
+            dom.removeElement(footerEl);
+        }
+
         // EMPTY CONTENT ELEMENT NB! CAN BE IMPROVED BY USIN REMOVECHILD //
         document.querySelector('.content').innerHTML = "";
 
@@ -182,6 +205,7 @@ let createContent = function () {
 
                 // PARSE JSON INTO JS OBJECT //
                 let offer = JSON.parse(result);
+
 
                 // GENERATE CONTENT-GALERY-INFO FOR INFO & DESCRIPTION //
                 createContent.galeryInfo(offer);
@@ -206,6 +230,10 @@ let createContent = function () {
                     createContent.galery(filteredOfferDetails, false);
                 }
             })
+            .then(() => {
+                createFooter();
+            });
+
     };
 
 
@@ -218,7 +246,6 @@ let createContent = function () {
 
         dom.getOffers(url)
             .then((result) => {
-
                 // PARSE JSON INTO JS OBJECT //
                 let offer = JSON.parse(result);
 
@@ -234,7 +261,6 @@ let createContent = function () {
                         // SENDS REUQEST FOR CONTENT-GALERY-OFFER DETAILS //
                         dom.getOffers(`https://couponmatix.firebaseio.com/v0/items/${prop}.json`)
                             .then((result) => {
-
                                 // PARSE JSON INTO JS OBJECT //
                                 let offerDetails = JSON.parse(result);
 
@@ -243,17 +269,18 @@ let createContent = function () {
                                 createContent.galery(limitedOffers, true);
                                 resolve('success');
                             })
-
-
+                            
                     }// LOOP ENDS//
                 });
 
-                p.then(()=> createFooter());
-            });
+                p.then(() => { createFooter(); })
+            })
+
     };
 
     return {
         ads: ads,
+        sideAd: sideAd,
         galeryInfo: galeryInfo,
         galery: galery,
         createPage: createContentSidePage,

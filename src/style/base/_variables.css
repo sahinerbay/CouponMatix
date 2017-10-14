@@ -11,7 +11,7 @@ $forExtraLarge: 50%;
 
 /* -Navbar- */
 $navbarLinkColor: #8c8888;
-$navBarHoverColor: rgba(10,158,10,.83);
+$navBarHoverColor: #1d976c;
 
 /* -Filter Bar- */
 /* --Search Bar & Select Dropdown-- */
@@ -28,13 +28,9 @@ $center: center;
 
 
 /* -Content__Offer__Footer- */
-/* --Description & Statement-- */
-$fontSizeOfferFooterStatement: 1.1rem;
+/* --Description -- */
 $fontSizeOfferFooterDescription: .8rem;
-$fontColorOfferFooterStatement: #0d820c;
 
 /* ---Content__Offer__Footer__Link---  */
-$linkDefault: #6A6;
-$linkHover: #247424;
-
+$linkHover: #146d4e;
 
