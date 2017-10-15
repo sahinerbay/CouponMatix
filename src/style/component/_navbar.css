@@ -2,9 +2,7 @@
     width: 95%;
     margin: 0 auto;
 
-    &--margin-bottom {
-        margin-bottom: 10px;
-    }
+    
 
     &__logo {
         display: none;
@@ -28,7 +26,7 @@
 
     &__menu__links__mobileLogo-frame {
         display: inline-block;
-        padding-top: 7px;
+        padding-top: 10px;
         width: 85%;
     }
 
@@ -41,9 +39,12 @@
         float: right;
         padding-right: 0;
         text-decoration: none;
-        padding: 14px 0px 14px 16px;
-        font-size: 1.35rem;
+        padding: 19px 0 9px 16px;
+        font-size: 1.40rem;
         letter-spacing: .15vw;
+        &:hover, &:active {
+            cursor: pointer;
+        }
     }
 
     &__menu__links.responsive {
@@ -59,9 +60,24 @@
         display: block;
         text-align: left;
     }
+
+    @mixin smaller {
+        &--margin-bottom {
+            margin-bottom: 10px;
+        }
+
+        &__menu__links__hamburgerIcon {
+            padding: 22px 0 6px 16px;
+            font-size: 1.45rem;
+        }
+    }
     
     @mixin small {
         width: 90%;
+        
+        &__menu__links__hamburgerIcon {
+            font-size: 1.75rem;
+        }
     }
 
     @mixin medium {

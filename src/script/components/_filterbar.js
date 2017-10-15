@@ -127,8 +127,7 @@ let filterBar = function () {
 
         // SORTING VIA SELECT BAR ONCHANGE //
         filterbarSort.addEventListener('change', (e) => {
-            //createContent.createPage(type, e.target.value);
-            console.log(e.target.value)
+            createContent.createContentViaSorting(e.target.value);
         })
 
     }

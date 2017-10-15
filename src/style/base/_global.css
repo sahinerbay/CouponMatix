@@ -31,7 +31,8 @@ body:before {
 }
 
 .wrapper--margin {
-    margin: 80px 0 225px;
+    margin: 80px 0 300px;
+    min-height: 1000px;
     
     @mixin medium {
         margin-top: 150px;

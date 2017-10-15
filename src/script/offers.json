@@ -27,7 +27,8 @@
                     "link": "http://www.ortega.com/promotions/",
                     "classname": "coupons",
                     "category": "foods",
-                    "id": 1001
+                    "id": 1001,
+                    "addedAs": 1
                 },
                 {
                     "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",
@@ -36,7 +37,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/laspalmas.jpg?alt=media&token=b80b7fdf-9993-4ead-9b55-1fef5a0f1179",
                     "link": "http://www.laspalmassauces.com/coupons/",
                     "classname": "coupons",
-                    "category": "foods"
+                    "category": "foods",
+                    "addedAs": 2
                 },
                 {
                     "tags": "pirate's body, snacks, chips, healthy, smartsource",
@@ -45,7 +47,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/piratebrands.jpg?alt=media&token=f4cf7bf8-6514-40e0-9ce5-688eb8674c5d",
                     "link": "http://www.piratebrands.com/coupons",
                     "classname": "coupons",
-                    "category": "foods"
+                    "category": "foods",
+                    "addedAs": 3
                 },
                 {
                     "tags": "new york style, chips, crisps, smartsource, healthy, snacks",
@@ -54,7 +57,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/newyorkstyle.jpg?alt=media&token=1ad02334-79c5-4676-8147-0a06e91e0ed0",
                     "link": "http://www.newyorkstyle.com/special-offers/",
                     "classname": "coupons",
-                    "category": "foods"
+                    "category": "foods",
+                    "addedAs": 4
                 },
                 {
                     "tags": "cream of wheat, rice, healthy, smartsource, breakfast, porridge",
@@ -63,7 +67,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/creamofwheat.jpg?alt=media&token=87844dc4-b129-403d-abcc-696be6045d72",
                     "link": "http://www.creamofwheat.com/promotions/",
                     "classname": "coupons",
-                    "category": "foods"
+                    "category": "foods",
+                    "addedAs": 5
                 },
                 {
                     "tags": "flatout flatbread, healthy, pizza, wraps, hopster",
@@ -72,7 +77,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/flatout.jpg?alt=media&token=c06300ba-eabd-419f-9a83-bea53bc26220",
                     "link": "http://www.flatoutbread.com/coupon/",
                     "classname": "coupons",
-                    "category": "foods"
+                    "category": "foods",
+                    "addedAs": 6
                 },
                 {
                     "tags": "northland juice, smartsource, cranberry, raspberry",
@@ -81,7 +87,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/northlandJuice.jpg?alt=media&token=d9013a71-9a5d-4b12-8d6e-8504f54fa386",
                     "link": "https://www.northlandjuices.com/offers/",
                     "classname": "coupons",
-                    "category": "beverages"
+                    "category": "beverages",
+                    "addedAs": 7
                 },
                 {
                     "tags": "Sunsweet, juice, dried fruit, smartsource, healthy",
@@ -90,7 +97,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/sunsweet.jpg?alt=media&token=a7e879cd-ee13-4e31-89a4-5a31b3ed7236",
                     "link": "http://sunsweet.com/print/coupons/",
                     "classname": "coupons",
-                    "category": "foods"
+                    "category": "foods",
+                    "addedAs": 8
                 },
                 {
                     "tags": "Enjoy Life Foods, chocolate bars, cookies, gluten-free, vegan, smartsource, healthy",
@@ -99,7 +107,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/enjoylifefoods.jpg?alt=media&token=2e6fcee2-1706-4a43-9a9a-12eaeeb817f4",
                     "link": "https://enjoylifefoods.com/coupons/",
                     "classname": "coupons",
-                    "category": "foods"
+                    "category": "foods",
+                    "addedAs": 9
                 },
                 {
                     "tags": "Irish Spring, body wash, soap, bricks",
@@ -108,7 +117,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/irishspring.jpg?alt=media&token=5ff4b3a8-d1d8-44b8-869f-d169ff39ca4e",
                     "link": "http://www.irishspring.com/coupons",
                     "classname": "coupons",
-                    "category": "personal care"
+                    "category": "personal care",
+                    "addedAs": 10
                 },
                 {
                     "tags": "Dr. Scholl's, foot care, smartsource",
@@ -117,7 +127,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/drscholls.jpg?alt=media&token=57506b1e-d607-45a5-bbbd-bf2ed8a8b007",
                     "link": "https://www.drscholls.com/coupons/",
                     "classname": "coupons",
-                    "category": "personal care"
+                    "category": "personal care",
+                    "addedAs": 11
                 },
                 {
                     "tags": "Hefty, trash bags, smartsource",
@@ -126,7 +137,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/hefty.jpg?alt=media&token=cffa1f7d-69ca-47eb-8b62-b0cab596e4f0",
                     "link": "http://www.hefty.com/promotions/coupons/",
                     "classname": "coupons",
-                    "category": "household"
+                    "category": "household",
+                    "addedAs": 12
                 },
                 {
                     "tags": "Nature Valley, cereal, granola bars, healthy",
@@ -135,7 +147,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/naturevalley.jpg?alt=media&token=927a4be1-966e-45eb-9b3c-acc4c5f868d1",
                     "link": "http://www.naturevalley.com/coupons/",
                     "classname": "coupons",
-                    "category": "food"
+                    "category": "food",
+                    "addedAs": 13
                 },
                 {
                     "tags": "PetArmor, pet care, bricks",
@@ -144,7 +157,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/petarmor.jpg?alt=media&token=6ef709c3-d297-4849-b2f9-662e65dfa2eb",
                     "link": "https://www.petarmor.com/special-offers/",
                     "classname": "coupons",
-                    "category": "pet care"
+                    "category": "pet care",
+                    "addedAs": 14
                 },
                 {
                     "tags": "crest, toothpaste, mouthwash, whitestrips, bricks",
@@ -153,7 +167,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/crest.jpg?alt=media&token=a1eaabfb-a23f-41b3-a550-f9138d341150",
                     "link": "https://crest.com/en-us/coupons",
                     "classname": "coupons",
-                    "category": "personal care"
+                    "category": "personal care",
+                    "addedAs": 15
                 },
                 {
                     "tags": "pedigree, dog food, dog treats, bricks",
@@ -162,7 +177,8 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/pedigree.jpg?alt=media&token=2e39107c-c96e-48c6-879b-63ba9fea9390",
                     "link": "https://www.pedigree.com/special-offers",
                     "classname": "coupons",
-                    "category": "pet care"
+                    "category": "pet care",
+                    "addedAs": 16
                 }
             ],
             "2001": [

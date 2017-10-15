@@ -6,15 +6,18 @@ import dom from '../utils/_dom';
 let navLinks = [
     {
         'name': document.querySelector('a[href="#coupons"]'),
-        'type': 1001
+        'type': 1001,
+        'url': 'coupons.html'
     },
     {
         'name': document.querySelector('a[href="#samples"]'),
-        'type': 2001
+        'type': 2001,
+        'url': 'samples.html'
     },
     {
         'name': document.querySelector('a[href="#giveaways"]'),
-        'type': 3001
+        'type': 3001,
+        'url': 'giveaways.html'
     }
 ];
 
@@ -49,3 +52,4 @@ for (let element of navLinks) {
 
     });
 }
+

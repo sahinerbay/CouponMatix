@@ -5,6 +5,12 @@
     }
 }
 
+@define-mixin smaller {
+    @media (min-width: 380px) {
+        @mixin-content;
+    }
+}
+
 @define-mixin small {
     @media (min-width: 530px) {
         @mixin-content;
@@ -43,13 +49,10 @@
 }
 
 /* -Filter Bar Select Dropdown and Search Bar- */
-@define-mixin input $fontSize, $padding {
+@define-mixin input {
     border: 2px solid #2f9e01;
     border-radius: 4px;
     color: #737171;
-    font-size: $fontSize;
-    padding: $padding;
-    width: 110px;
     text-transform: capitalize;
 }
 

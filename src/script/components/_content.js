@@ -8,7 +8,7 @@ let createContent = function () {
 
     // CREATE WRAPPER ELEMENT(DIV) AND ITS CHILD CONTENT ELEMENT(DIV) WITH CLASSNAMES //
     let wrapper = dom.createElementWithClassName('div', 'wrapper wrapper--margin'),
-        contentEl = dom.createElementWithClassName('div', 'content');
+        contentEl = dom.createElementWithClassName('div', 'content content--margin-top content--padding-top');
 
     // INSERT WRAPPER AND ITS ONLY CHILD CONTENT ELEMENT INTO DOM //
     dom.append(document.body, wrapper);
@@ -17,18 +17,20 @@ let createContent = function () {
     // RETRIEVE CONTENT ELEMENT TO BE FILLED BELOW //
     let content = document.querySelector('.content');
 
+    let offerDetailsGlobal;
+
 
 
     // GENERATE 3 X ADS FOR MAIN PAGE ONLY //
     let ads = () => {
-        let contentAd = dom.createElementWithClassName('div', 'content__ad content__ad--margin-top row');
+        let contentAd = dom.createElementWithClassName('div', 'content__ad row');
         dom.append(content, contentAd);
 
         for (let numberOfAdSlot = 0; numberOfAdSlot < 3; numberOfAdSlot++) {
 
             let randNo = Math.floor(Math.random() * 14);
 
-            let contentAdFrame = dom.createElementWithClassName('div', 'content__ad__frame content__ad__frame--margin-bottom row__xs-12 row__s-6 row__md-4 row__lg-4'),
+            let contentAdFrame = dom.createElementWithClassName('div', 'content__ad__frame row__xs-12 row__s-6 row__md-4 row__lg-4'),
                 contentAdFrameImage = dom.createElementWithClassName('img', 'content__ad__frame--image'),
                 contentAdFrameImageLink = dom.createElementWithClassName('a', 'content__ad__frame--image__link');
 
@@ -47,7 +49,7 @@ let createContent = function () {
 
     // CREATE 1 X AD FOR SIDE PAGES //
     let sideAd = () => {
-        let contentAd = dom.createElementWithClassName('div', 'content__ad content__ad--margin-top row');
+        let contentAd = dom.createElementWithClassName('div', 'content__ad row');
         dom.append(content, contentAd);
 
         let randNo = Math.floor(Math.random() * 6);
@@ -127,7 +129,7 @@ let createContent = function () {
         for (let i = 0; i < offer.length; i++) {
 
             // CREATE ROW AND APPEND INTO CONTENT-GALERY //
-            let contentGaleryOffer = dom.createElementWithClassName('div', 'content__galery__offer content__galery__offer--padding row__xs-12 row__s-6 row__md-4 row__lg-3');
+            let contentGaleryOffer = dom.createElementWithClassName('div', 'content__galery__offer content__galery__offer--side  content__galery__offer--padding row__xs-12 row__s-6 row__md-4 row__lg-3');
             dom.append(contentGaleryContainer, contentGaleryOffer);
 
             // GENERATE TOP PART (IMAGE & ITS FRAME) OF EACH OFFER // 
@@ -173,6 +175,11 @@ let createContent = function () {
 
         // GENERATE VIEW LINK IF ITS MAIN PAGE //
         if (isMainPage) {
+
+            let contentGaleryOffer = document.querySelectorAll('.content__galery__offer');
+            for (let i = 0; i < contentGaleryOffer.length; i++) {
+                contentGaleryOffer[i].className = 'content__galery__offer content__galery__offer--main content__galery__offer--padding row__xs-12 row__s-6 row__md-4 row__lg-3';
+            }
 
             // GENERATE VIEW LINK ELEMENT WITH CLASSNAMES //
             let contentGaleryViewAllContainer = dom.createElementWithClassName('div', 'content__galery__viewAll content__galery__viewAll--margin-top'),
@@ -236,13 +243,17 @@ let createContent = function () {
                 filterbar.select(type);
                 filterbar.sort();
 
-                // RETURN NEW PROMISE TO ACQUIRE OFFER DETAILS //
+                // RETURN NEW PROMISE TO ACQUIRE OFFER STATEMENT, IMAGE & LINK URL //
                 return dom.getOffers(`https://couponmatix.firebaseio.com/v0/items/${type}.json`)
             })
             .then((result) => {
 
                 // PARSE JSON INTO JS OBJECT //
                 let offerDetails = JSON.parse(result);
+
+                // SHOW NEWEST OFFERS //
+                // REVERSE CHANGES ORIGINAL ARRAY //
+                offerDetailsGlobal = sortByDate.ascending(offerDetails);
 
                 // LOAD OFFERS //
                 createContent.galery(offerDetails, false);
@@ -254,11 +265,12 @@ let createContent = function () {
             });
     };
 
+    // USED IN 'filterbar.js' AS EVENTLISTENER ONCHANGE //
     // ONLY LOADS CONTENT--GALERY--CONTAINER //
     // DOESN'T DEAL WITH OTHER COMPONENTS OF THE PAGE //
     let createContentViaFiltering = (type, filterQuery) => {
 
-        // GENERATE ADDRESS TO ACQUIRE OFFER INFO & DESCRIPTION 
+        // GENERATE ADDRESS TO ACQUIRE OFFER STATEMENT, IMAGE & LINK URL //
         let url = `https://couponmatix.firebaseio.com/v0/items/${type}.json`;
 
         dom.getOffers(url)
@@ -269,7 +281,16 @@ let createContent = function () {
 
                 // EMPTY CONTENT ELEMENT //
                 let contentGaleryContainer = dom.getElement('content__galery__container');
-                dom.removeElement(contentGaleryContainer)
+                dom.removeElement(contentGaleryContainer);
+
+                // CHANGE SORTING SELECTED VALUE TO NEWEST //
+                // EVERYTIME YOU SELECT A CATEGORY //
+                let selectedNewest = dom.getElement('filterbar__sort');
+                selectedNewest.children[0].selected = true;
+
+                // SHOW NEWEST OFFERS //
+                // REVERSE CHANGES ORIGINAL ARRAY //
+                offerDetailsGlobal = sortByDate.ascending(offerDetails);
 
                 // FILTER OFFERS BASED ON SELECT DROPDOWN VALUES(filterQuery) //
                 // WHEN 'showAll' SELECTED //
@@ -279,16 +300,94 @@ let createContent = function () {
                 // WHEN A CATEGORY SELECTED //
                 else {
                     let filteredOfferDetails = offerDetails.filter((currentEl) => currentEl.category == filterQuery);
+                    offerDetailsGlobal = filteredOfferDetails;
                     createContent.galery(filteredOfferDetails, false);
                 }
             })
     };
 
 
+    // USED IN 'filterbar.js' AS EVENTLISTENER ONCHANGE //
+    // ONLY LOADS CONTENT--GALERY--CONTAINER //
+    // DOESN'T DEAL WITH OTHER COMPONENTS OF THE PAGE //
+    let createContentViaSorting = (sortQuery) => {
 
-    let createContentViaSorting = () => {
+        // EMPTY CONTENT ELEMENT //
+        let contentGaleryContainer = dom.getElement('content__galery__container');
+        dom.removeElement(contentGaleryContainer);
 
+        // REMOVE SPACES AND TRANSFORM TO LOWERCASE //
+        let query = sortQuery.replace(/\s/g, '').toLowerCase();
+
+        switch (query) {
+            case 'newest':
+                let sortedOffers = sortByDate.ascending(offerDetailsGlobal);
+                createContent.galery(sortedOffers, false);
+                break;
+            case 'oldest':
+                sortedOffers = sortByDate.descending(offerDetailsGlobal);
+                createContent.galery(sortedOffers, false);
+                break;
+            case 'branda-z':
+                sortedOffers = sortByName.ascending(offerDetailsGlobal);
+                createContent.galery(sortedOffers, false);
+                break;
+            case 'brandz-a':
+                sortedOffers = sortByName.descending(offerDetailsGlobal);
+                createContent.galery(sortedOffers, false);
+                break;
+        }
     };
+
+    let sortByDate = function () {
+
+        let ascending = (offers) => {
+            return offers.sort((a, b) => b.addedAs - a.addedAs);
+        };
+
+        let descending = (offers) => {
+            return offers.sort((a, b) => a.addedAs - b.addedAs);
+        };
+
+        return {
+            ascending: ascending,
+            descending: descending
+        }
+    }();
+
+    let sortByName = function () {
+
+        let ascending = (offers) => {
+            return offers.sort(function (a, b) {
+                let tagOne = a.tags.split(/(\s)/, 1)[0].toLowerCase(),
+                    tagTwo = b.tags.split(/(\s)/, 1)[0].toLowerCase();
+
+                if (tagOne < tagTwo) //sort string ascending
+                    return -1;
+                if (tagOne > tagTwo)
+                    return 1;
+                return 0; //default return value (no sorting)
+            });
+        };
+
+        let descending = (offers) => {
+            return offers.sort(function (a, b) {
+                let tagOne = a.tags.split(/(\s)/, 1)[0].toLowerCase(),
+                    tagTwo = b.tags.split(/(\s)/, 1)[0].toLowerCase();
+
+                if (tagTwo < tagOne) //sort string descending
+                    return -1;
+                if (tagTwo > tagOne)
+                    return 1;
+                return 0; //default return value (no sorting)
+            });
+        };
+
+        return {
+            ascending: ascending,
+            descending: descending
+        }
+    }();
 
 
 

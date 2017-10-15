@@ -16,7 +16,6 @@ createContent.ads();
 let homeLink = document.querySelector('.navbar__menu__links a');
 homeLink.className = "navbar__menu__links__active";
 
-
 // const mq = window.matchMedia( "(min-width: 500px)" );
 
 // if (mq.matches) {

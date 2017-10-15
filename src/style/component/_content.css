@@ -1,18 +1,10 @@
 .content {
     width: $forExtraSmall;
-    margin: 0 auto;
+    margin: 105px auto 0;
 
     &__ad {
         justify-content: space-between;
         text-align: center;
-    }
-
-    &__ad--margin-top {
-        margin-top: 120px;
-    }
-
-    &__ad__frame--margin-bottom {
-        margin: 0 auto 15px auto;
     }
 
     &__ad__frame:not(:first-child) {
@@ -73,7 +65,11 @@
         flex-wrap: wrap;
     }
 
-    &__galery__offer {
+    &__galery__offer--side {
+        border-bottom: 1px solid #c6c6c6;
+    }
+
+    &__galery__offer--main:not(:last-child) {
         border-bottom: 1px solid #c6c6c6;
     }
 
@@ -128,8 +124,23 @@
         @mixin button $secondaryColor, $primaryColor, $primaryHelper, $primaryHelper;
     }
 
+    @mixin smaller {
+        &--padding-top {
+            padding-top: 15px;
+        }
+    }
+
     @mixin small {
         width: $forSmall;
+
+        &--padding-top {
+            padding-top: 20px;
+        }
+
+        &__galery__offer--main:nth-last-child(2) {
+            border-bottom: none;
+        }
+
         &__galery__offer__top__frame--image {
             width: 110px;
             height: 110px;
@@ -143,16 +154,16 @@
     @mixin medium {
         width: $forMedium;
 
-        &__ad--margin-top {
-            margin-top: 170px;
-        }
-
         &__ad__frame:last-child {
             display: inline-block;
         }
 
         &__galery__info__title  {
             text-align: left;
+        }
+
+        &__galery__offer--main:not(:last-child) {
+            border-bottom: 1px solid #c6c6c6;
         }
 
         &__galery__offer__top__frame--image {
@@ -164,6 +175,14 @@
     @mixin large {
         width: $forLarge;
 
+        &--padding-top {
+            padding-top: 10px;
+        }
+
+        &__galery__offer--main {
+            border-bottom: none !important;
+        }
+
         &__galery__offer__top__frame--image {
             width: 140px;
             height: 140px;
@@ -172,6 +191,11 @@
 
     @mixin extralarge {
         width: $forExtraLarge;
+
+        &--padding-top {
+            padding-top: 20px;
+        }
+
         &__galery__offer__top__frame--image {
             width: 150px;
             height: 150px;

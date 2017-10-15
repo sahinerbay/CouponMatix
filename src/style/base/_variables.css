@@ -15,9 +15,9 @@ $navBarHoverColor: #1d976c;
 
 /* -Filter Bar- */
 /* --Search Bar & Select Dropdown-- */
-$fontSize: .9rem;
+$fontSize: .8rem;
 $paddingSelectDropDown: 5px 10px;
-$paddingSearchBar: 8px 0 8px 10px;
+
 
 /* -Content- */
 /* --Description & Title-- */
