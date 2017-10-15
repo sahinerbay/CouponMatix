@@ -91,23 +91,16 @@ let createContent = function () {
         dom.setTextContent(`${offer.classname}__title`, offer.main);
         dom.setTextContent(`${offer.classname}__description`, offer.desc);
 
-        if (isMainPage) {
+        // IF IT'S NOT MAIN PAGE BUT SECTIONS LOAD FILTER SELECT DROP DOWNS //
+        if (!isMainPage) {
             let filterFrame = dom.createElementWithClassName('div', 'content__galery__info__filter row'),
                 filterFrameLeft = dom.createElementWithClassName('div', 'content__galery__info__filter-left row__xs-6 '),
-                filterFrameLeftSort = dom.createElementWithClassName('div', 'content__galery__info__filter__sort'),
-                filterFrameRight = dom.createElementWithClassName('div', 'content__galery__info__filter-right row__xs-6 '),
-                filterFrameRightCategory = dom.createElementWithClassName('div', 'content__galery__info__filter__category');
+                //filterFrameLeftSort = dom.createElementWithClassName('div', 'content__galery__info__filter__sort'),
+                filterFrameRight = dom.createElementWithClassName('div', 'content__galery__info__filter-right row__xs-6 ');
+            //filterFrameRightCategory = dom.createElementWithClassName('div', 'content__galery__info__filter__category');
 
             dom.append(contentGaleryInfo, filterFrame);
             dom.append(filterFrame, filterFrameLeft, filterFrameRight);
-            dom.append(filterFrameLeft, filterFrameLeftSort);
-            dom.append(filterFrameRight, filterFrameRightCategory);
-
-            //newest
-            //oldest
-            //Brand A-Z
-            //Brand Z-A
-
         }
     };
 
@@ -149,10 +142,11 @@ let createContent = function () {
             contentGaleryOfferTopFrameImage.src = offer[i].imageURL;
 
             // APPEND TOP PART OF THE OFFER INTO CONTENT-GALERY-OFFER //
+            dom.append(contentGaleryOffer, contentGaleryOfferTop);
             dom.append(contentGaleryOfferTop, contentGaleryOfferTopFrame);
             dom.append(contentGaleryOfferTopFrame, contentGaleryOfferTopFrameImageLink);
             dom.append(contentGaleryOfferTopFrameImageLink, contentGaleryOfferTopFrameImage);
-            dom.append(contentGaleryOffer, contentGaleryOfferTop);
+
 
             // GENERATE FOOTER PART (STATEMENT, DESCRIPTION, BUTTON) OF EACH OFFER // 
             let contentGaleryOfferFooter = dom.createElementWithClassName('div', 'content__galery__offer__footer'),
@@ -213,7 +207,7 @@ let createContent = function () {
     // IT'S USED FOR SECTIONS (COUPONS, SAMPLES, GIVEAWAYS) //
     // WHEN 'VIEWALL', NAVBAR LINK OR FILTER CATEGORY SELECTED //
     // NOT USED FOR MAIN PAGE //
-    let createContentSidePage = (type, filterQuery = null) => {
+    let createContentSidePage = (type) => {
 
         // GENERATE ADDRESS TO ACQUIRE OFFER INFO & DESCRIPTION 
         let url = `https://couponmatix.firebaseio.com/v0/types/${type}.json`;
@@ -224,27 +218,23 @@ let createContent = function () {
                 // PARSE JSON INTO JS OBJECT //
                 let offer = JSON.parse(result);
 
-                // WHEN NAVBAR LINK || FILTER CATEGORY SELECTED //
-                // WHEN PAGE LOADS ITSELF || WHEN 'showAll' SELECTED //
-                if (filterQuery === null || filterQuery === 'showAll') {
-
-                    // REMOVE FOOTER //
-                    let footerEl = document.querySelector('.footer');
-                    if (footerEl !== null) {
-                        dom.removeElement(footerEl);
-                    }
-
-                    // EMPTY CONTENT ELEMENT //
-                    let content = dom.getElement('content');
-                    dom.removeAllChildren(content)
-
-                    // ADD ADVERTISING //
-                    createContent.sideAd();
-
-                    // GENERATE CONTENT-GALERY-INFO FOR INFO & DESCRIPTION //
-                    createContent.galeryInfo(offer, true);
-                    filterbar.select(type);
+                // REMOVE FOOTER //
+                let footerEl = document.querySelector('.footer');
+                if (footerEl !== null) {
+                    dom.removeElement(footerEl);
                 }
+
+                // EMPTY CONTENT ELEMENT //
+                let content = dom.getElement('content');
+                dom.removeAllChildren(content);
+
+                // ADD ADVERTISING //
+                createContent.sideAd();
+
+                // GENERATE CONTENT-GALERY-INFO FOR INFO & DESCRIPTION //
+                createContent.galeryInfo(offer, false);
+                filterbar.select(type);
+                filterbar.sort();
 
                 // RETURN NEW PROMISE TO ACQUIRE OFFER DETAILS //
                 return dom.getOffers(`https://couponmatix.firebaseio.com/v0/items/${type}.json`)
@@ -254,27 +244,49 @@ let createContent = function () {
                 // PARSE JSON INTO JS OBJECT //
                 let offerDetails = JSON.parse(result);
 
+                // LOAD OFFERS //
+                createContent.galery(offerDetails, false);
+            })
+            .then(() => {
+
+                // CREATE FOOTER //
+                createFooter();
+            });
+    };
+
+    // ONLY LOADS CONTENT--GALERY--CONTAINER //
+    // DOESN'T DEAL WITH OTHER COMPONENTS OF THE PAGE //
+    let createContentViaFiltering = (type, filterQuery) => {
+
+        // GENERATE ADDRESS TO ACQUIRE OFFER INFO & DESCRIPTION 
+        let url = `https://couponmatix.firebaseio.com/v0/items/${type}.json`;
+
+        dom.getOffers(url)
+            .then((result) => {
+
+                // PARSE JSON INTO JS OBJECT //
+                let offerDetails = JSON.parse(result);
+
+                // EMPTY CONTENT ELEMENT //
+                let contentGaleryContainer = dom.getElement('content__galery__container');
+                dom.removeElement(contentGaleryContainer)
+
                 // FILTER OFFERS BASED ON SELECT DROPDOWN VALUES(filterQuery) //
-                // WHEN NAVBAR LINK || FILTER CATEGORY SELECTED //
-                // WHEN PAGE LOADS ITSELF || WHEN 'showAll' SELECTED //
-                if (filterQuery === null || filterQuery === 'showAll') {
+                // WHEN 'showAll' SELECTED //
+                if (filterQuery === 'showAll') {
                     createContent.galery(offerDetails, false);
                 }
-                // WHEN A CATEGORY SELECTED = DO FILTERING //
+                // WHEN A CATEGORY SELECTED //
                 else {
-                    let contentGaleryContainer = dom.getElement('content__galery__container');
-                    dom.removeElement(contentGaleryContainer);
                     let filteredOfferDetails = offerDetails.filter((currentEl) => currentEl.category == filterQuery);
                     createContent.galery(filteredOfferDetails, false);
                 }
             })
-            .then(() => {
-                // WHEN NAVBAR LINK || FILTER CATEGORY SELECTED //
-                // WHEN PAGE LOADS ITSELF || WHEN 'showAll' SELECTED //
-                if (filterQuery === null || filterQuery === 'showAll') {
-                    createFooter();
-                }
-            });
+    };
+
+
+
+    let createContentViaSorting = () => {
 
     };
 
@@ -290,7 +302,7 @@ let createContent = function () {
             .then((result) => {
                 // PARSE JSON INTO JS OBJECT //
                 let offer = JSON.parse(result);
-
+                filterbar.searchbar()
                 // LOOP THROUGH 'offer' OBJECTS PROPERTIES //
                 // GENERATES ALL THREE SECTIONS (COUPONS, SAMPLES, GIVEAWAYS) //
                 // RETURNS PROMISE BECAUSE WE NEED FOOTER TO LOAD AFTER THE CONTENT IS LOADED //
@@ -298,7 +310,7 @@ let createContent = function () {
                     for (let prop in offer) {
 
                         // GENERATE CONTENT-GALERY-INFO FOR INFO & DESCRIPTION //
-                        createContent.galeryInfo(offer[prop], false);
+                        createContent.galeryInfo(offer[prop], true);
 
                         // SENDS REUQEST FOR CONTENT-GALERY-OFFER DETAILS //
                         dom.getOffers(`https://couponmatix.firebaseio.com/v0/items/${prop}.json`)
@@ -327,6 +339,8 @@ let createContent = function () {
         galeryInfo: galeryInfo,
         galery: galery,
         createPage: createContentSidePage,
+        createContentViaSorting: createContentViaSorting,
+        createContentViaFiltering,
         createContentMainPage: createContentMainPage
     }
 }();

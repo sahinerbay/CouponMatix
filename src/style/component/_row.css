@@ -17,18 +17,16 @@
         padding-bottom: 20px;
     }
     
-    @mixin extrasmall {
-        &__xs-0 {
-            width: 0;
-        }
+    &__xs-0 {
+        width: 0;
+    }
 
-        &__xs-6 {
-            width: 50%;
-        }
+    &__xs-6 {
+        width: 50%;
+    }
 
-        &__xs-12 {
-            width: 100%;
-        }
+    &__xs-12 {
+        width: 100%;
     }
 
     @mixin small {

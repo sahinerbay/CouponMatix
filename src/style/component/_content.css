@@ -55,6 +55,18 @@
         @mixin contentInfo $fontSizeContentDescription, $justify;
     }
 
+    &__galery__info__filter-left, &__galery__info__filter-right  {
+        display:inherit;
+    }
+
+    &__galery__info__filter-left {
+        justify-content: flex-start;
+    }
+
+    &__galery__info__filter-right {
+        justify-content: flex-end;
+    }
+
     &__galery__container {
         width: 100%;
         display: inherit;
@@ -62,7 +74,7 @@
     }
 
     &__galery__offer {
-        border-top: 1px solid #c6c6c6;
+        border-bottom: 1px solid #c6c6c6;
     }
 
     &__galery__offer--padding {

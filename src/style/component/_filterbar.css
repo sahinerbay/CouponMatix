@@ -25,6 +25,17 @@
         @mixin input $fontSize, $paddingSelectDropDown;
     }
 
+    &__sort {
+        @mixin input $fontSize, $paddingSelectDropDown;
+    }
+
+    &__sort--title {
+        font-size: .9rem;
+        padding: 7.3px 10px;
+        color: #737171;
+        font-family: sans-serif;
+    }
+
     &__searchbar {
         @mixin input $fontSize, $paddingSearchBar;
         display:none;
