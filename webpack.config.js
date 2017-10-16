@@ -61,12 +61,6 @@ module.exports = {
                 template: 'src/views/index.html',
             }
         ),
-        new HtmlWebpackPlugin(
-            {   
-                filename: 'about.html',
-                template: 'src/views/about.html',
-            }
-        ),
         new webpack.HotModuleReplacementPlugin(),
         new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
         new CopyWebpackPlugin([{ from: './src/images', to: './images' }]),

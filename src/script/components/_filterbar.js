@@ -36,7 +36,7 @@ let filterBar = function () {
         let filterSearchAttributes = {
             'type': 'text',
             'name': 'search',
-            'value': 'Search For Coupons: Yoplait, Ziploc, Downy, Detergent...'
+            'placeholder': 'Search For Coupons: Yoplait, Ziploc, Downy, Detergent...'
         };
         dom.setAttributes(filterbarSearch, filterSearchAttributes);
 

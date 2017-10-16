@@ -23,3 +23,25 @@ homeLink.className = "navbar__menu__links__active";
 //   } else {
 //     console.log('less than 500px')
 //   }
+
+window.addEventListener('scroll', (() => {
+
+    let scrolled = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+    let logo = dom.getElement('narbar__logo__link__image'),
+        navbar = dom.getElement('navbar');
+
+    const mq = window.matchMedia("(min-width: 800px)");
+
+    if (mq.matches) {
+        if (scrolled === 0) {
+            logo.src = '/images/logo.jpg';
+            navbar.classList.add('navbar--margin-bottom');
+        } else {
+            logo.src = '/images/logo--small.png';
+            navbar.classList.remove('navbar--margin-bottom');
+        }
+    }
+
+
+})
+);
