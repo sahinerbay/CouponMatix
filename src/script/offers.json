@@ -26,7 +26,7 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
                     "link": "http://www.ortega.com/promotions/",
                     "classname": "coupons",
-                    "category": "foods",
+                    "category": "food",
                     "id": 1001,
                     "addedAs": 1
                 },
@@ -37,7 +37,7 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/laspalmas.jpg?alt=media&token=b80b7fdf-9993-4ead-9b55-1fef5a0f1179",
                     "link": "http://www.laspalmassauces.com/coupons/",
                     "classname": "coupons",
-                    "category": "foods",
+                    "category": "food",
                     "addedAs": 2
                 },
                 {
@@ -47,7 +47,7 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/piratebrands.jpg?alt=media&token=f4cf7bf8-6514-40e0-9ce5-688eb8674c5d",
                     "link": "http://www.piratebrands.com/coupons",
                     "classname": "coupons",
-                    "category": "foods",
+                    "category": "food",
                     "addedAs": 3
                 },
                 {
@@ -57,7 +57,7 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/newyorkstyle.jpg?alt=media&token=1ad02334-79c5-4676-8147-0a06e91e0ed0",
                     "link": "http://www.newyorkstyle.com/special-offers/",
                     "classname": "coupons",
-                    "category": "foods",
+                    "category": "food",
                     "addedAs": 4
                 },
                 {
@@ -67,7 +67,7 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/creamofwheat.jpg?alt=media&token=87844dc4-b129-403d-abcc-696be6045d72",
                     "link": "http://www.creamofwheat.com/promotions/",
                     "classname": "coupons",
-                    "category": "foods",
+                    "category": "food",
                     "addedAs": 5
                 },
                 {
@@ -77,7 +77,7 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/flatout.jpg?alt=media&token=c06300ba-eabd-419f-9a83-bea53bc26220",
                     "link": "http://www.flatoutbread.com/coupon/",
                     "classname": "coupons",
-                    "category": "foods",
+                    "category": "food",
                     "addedAs": 6
                 },
                 {
@@ -89,6 +89,7 @@
                     "classname": "coupons",
                     "category": "beverages",
                     "addedAs": 7
+                    
                 },
                 {
                     "tags": "Sunsweet, juice, dried fruit, smartsource, healthy",
@@ -97,7 +98,7 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/sunsweet.jpg?alt=media&token=a7e879cd-ee13-4e31-89a4-5a31b3ed7236",
                     "link": "http://sunsweet.com/print/coupons/",
                     "classname": "coupons",
-                    "category": "foods",
+                    "category": "food",
                     "addedAs": 8
                 },
                 {
@@ -107,7 +108,7 @@
                     "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/enjoylifefoods.jpg?alt=media&token=2e6fcee2-1706-4a43-9a9a-12eaeeb817f4",
                     "link": "https://enjoylifefoods.com/coupons/",
                     "classname": "coupons",
-                    "category": "foods",
+                    "category": "food",
                     "addedAs": 9
                 },
                 {
@@ -183,77 +184,96 @@
             ],
             "2001": [
                 {
-                    "tags": "ortega, taco shells, tortilla, mexican, smartsource",
-                    "statement": "SAVE $1.00",
-                    "description": "on any TWO (2) Ortega Products",
-                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/ortega.jpg?alt=media&token=87694381-a712-4be8-becc-6c4eed00e78a",
-                    "link": "http://www.ortega.com/promotions/",
+                    "tags": "meow mix, dry and wet cat food",
+                    "statement": "Meow Mix",
+                    "description": "Free Simple Servings Cat Food",
+                    "imageURL": "https://i5.walmartimages.com/asr/2f886046-c17c-425d-b0e1-be60f0f5aa7a_1.b9a087b774b86409f506d5951033e8a3.jpeg?odnBg=FFFFFF&odnWidth=150&odnHeight=150",
+                    "link": "https://meowmix.stoplightinteractive.com/",
                     "classname": "samples",
-                    "category": "foods",
+                    "category": "pet care",
+                    "addedAs": 1,
                     "id": 2001
                 },
                 {
-                    "tags": "las palmas, beans, sauce, mexican, enchilada, smartsource",
-                    "statement": "SAVE $1.00",
-                    "description": "on any TWO (2) Las Palmas Products",
-                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/laspalmas.jpg?alt=media&token=b80b7fdf-9993-4ead-9b55-1fef5a0f1179",
-                    "link": "http://www.laspalmassauces.com/coupons/",
+                    "tags": "U by Kotex, tampon, pad, liner",
+                    "statement": "U by Kotex",
+                    "description": "Get a Free Sample Pack From",
+                    "imageURL": "https://womens.mkoutletstate.com/wp-content/uploads/2017/03/u-by-kotex-cleanwear-ultra-thin-pads-with-wings-regular-unscented-50-count-picture-10-150x150.jpg",
+                    "link": "https://www.ubykotex.com/en-us/get-a-sample/",
                     "classname": "samples",
-                    "category": "foods"
+                    "category": "personal care",
+                    "addedAs": 2
                 },
                 {
-                    "tags": "pirate's body, snacks, chips, healthy, smartsource",
-                    "statement": "SAVE $.75",
-                    "description": "on any ONE (1) Pirate's Booty Product",
-                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/piratebrands.jpg?alt=media&token=f4cf7bf8-6514-40e0-9ce5-688eb8674c5d",
-                    "link": "http://www.piratebrands.com/coupons",
+                    "tags": "Jiffy Mix, baking mix, recipe book",
+                    "statement": "Jiffy Mix",
+                    "description": "Receive a FREE Recipe Book From",
+                    "imageURL": "https://i.pinimg.com/736x/94/e4/8f/94e48f12e3b94a5015f4a0a0b74dc065--jiffy-mix-recipes-recipe-books.jpg",
+                    "link": "http://www.jiffymix.com/bookorder.php",
                     "classname": "samples",
-                    "category": "foods"
+                    "category": "other",
+                    "addedAs": 3
                 },
                 {
-                    "tags": "new york style, chips, crisps, smartsource, healthy, snacks",
-                    "statement": "SAVE $.75",
-                    "description": "on any ONE (1) New York Style Product",
-                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/newyorkstyle.jpg?alt=media&token=1ad02334-79c5-4676-8147-0a06e91e0ed0",
-                    "link": "http://www.newyorkstyle.com/special-offers/",
+                    "tags": "Truvia, sugar, stevia",
+                    "statement": "Truvia",
+                    "description": "Free Sample of Stevia Natural Sweetener",
+                    "imageURL": "https://groceries.morrisons.com/productImages/256/256950011_0_150x150.jpg?identifier=ca77d0f96c62d28f277c84c7a9f09b2b",
+                    "link": "https://www.truvia.com/products/freesample",
                     "classname": "samples",
-                    "category": "foods"
+                    "category": "food",
+                    "addedAs": 4
+                    
                 },
                 {
-                    "tags": "cream of wheat, rice, healthy, smartsource, breakfast, porridge",
-                    "statement": "SAVE $1.00",
-                    "description": "on any TWO (2) Cream Of Wheat Products",
-                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/creamofwheat.jpg?alt=media&token=87844dc4-b129-403d-abcc-696be6045d72",
-                    "link": "http://www.creamofwheat.com/promotions/",
+                    "tags": "Natural Vitality, Vitamins, Supplements, anti-stress drink",
+                    "statement": "Natural Vitality",
+                    "description": "Free Sample of Natural Calm Drink",
+                    "imageURL": "https://www.canadianfreestuff.com/wp-content/uploads/2017/07/Free-Samples-Natural-Vitality-150x150.png",
+                    "link": "https://naturalvitality.com/free-calm-samples-home/",
                     "classname": "samples",
-                    "category": "foods"
+                    "category": "beverages",
+                    "addedAs": 5
                 },
                 {
-                    "tags": "flatout flatbread, healthy, pizza, wraps, hopster",
-                    "statement": "SAVE $1.00",
-                    "description": "on any ONE (1) Flatout Flatbread Product",
-                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/flatout.jpg?alt=media&token=c06300ba-eabd-419f-9a83-bea53bc26220",
-                    "link": "http://www.flatoutbread.com/coupon/",
+                    "tags": "Back to Nature, crackers, cookies",
+                    "statement": "Back to Nature",
+                    "description": "Grab a Free Sample of Crackers or Cookies",
+                    "imageURL": "http://www.efordcommissary.com/assets/images/thumbnails/backtonaturechocolatedelightgranola11oz.jpeg",
+                    "link": "http://mobileentryform.com/FreeBackToNatureSamples/",
                     "classname": "samples",
-                    "category": "foods"
+                    "category": "food",
+                    "addedAs": 6
                 },
                 {
-                    "tags": "northland juice, smartsource, cranberry, raspberry",
-                    "statement": "SAVE $1.00",
-                    "description": "on any ONE (1) Northland Juice",
-                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/northlandJuice.jpg?alt=media&token=d9013a71-9a5d-4b12-8d6e-8504f54fa386",
-                    "link": "https://www.northlandjuices.com/offers/",
+                    "tags": "Purine One, cat food",
+                    "statement": "Purina One",
+                    "description": "Register For True Instinct Free Cat Food",
+                    "imageURL": "http://bestcatfoodadvisor.net/wp-content/uploads/2015/05/1-150x150.png",
+                    "link": "https://profiles.purina.com/offers/form/85/PONE-TI-SC",
                     "classname": "samples",
-                    "category": "foods"
+                    "category": "pet care",
+                    "addedAs": 7
                 },
                 {
-                    "tags": "Sunsweet, juice, dried fruit, smartsource, healthy",
-                    "statement": "SAVE $1.00",
-                    "description": "on any ONE (1) Sunsweet Product",
-                    "imageURL": "https://firebasestorage.googleapis.com/v0/b/couponmatix.appspot.com/o/sunsweet.jpg?alt=media&token=a7e879cd-ee13-4e31-89a4-5a31b3ed7236",
-                    "link": "http://sunsweet.com/print/coupons/",
+                    "tags": "Firehouse Subs, restaurant, drink",
+                    "statement": "Firehouse Subs",
+                    "description": "Free Large Drink with the Purchase of Any Sub.",
+                    "imageURL": "https://eatstreet-static.s3.amazonaws.com/assets/images/restaurant_logos/firehouse-subs-bozeman-35452_1454447276601.png",
+                    "link": "https://www.firehousesubs.com/newsletter.aspx",
                     "classname": "samples",
-                    "category": "foods"
+                    "category": "restaurant",
+                    "addedAs": 8
+                },
+                {
+                    "tags": "Zing Stevia, sugar, sweetener",
+                    "statement": "Zing Stevia",
+                    "description": "Free Sample Pack of Stevia Sweetener",
+                    "imageURL": "https://www.mojosavings.com/wp-content/uploads/2017/09/e809ed98-938f-4b76-96a6-ab45debef987_1-150x150.jpg",
+                    "link": "https://www.zingstevia.com/free-sample-page",
+                    "classname": "samples",
+                    "category": "food",
+                    "addedAs": 9
                 }
             ],
             "3001": [

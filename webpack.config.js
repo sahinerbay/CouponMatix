@@ -11,7 +11,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: ["babel-polyfill", "./src/script/index.js"],
-    devtool: 'inline-source-map',
+    //devtool: 'inline-source-map',
     devServer: {
         contentBase: './build',
         hot: true

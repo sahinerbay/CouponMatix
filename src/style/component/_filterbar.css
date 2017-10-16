@@ -23,13 +23,15 @@
 
     &__select {
         @mixin input;
+        font-size: .9rem;
     }
 
     &__sort {
         @mixin input;
+        font-size: .9rem;
     }
 
-    &__sort--title {
+    &__sort--title, &__select--title {
         font-size: .9rem;
         padding: 7.3px 10px;
         color: #737171;
@@ -113,10 +115,6 @@
     @mixin extralarge {
         &--content {
             width: $forExtraLarge;
-        }
-
-        &__select {
-            width: 200px;
         }
 
         &__searchbar {

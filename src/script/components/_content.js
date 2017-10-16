@@ -28,7 +28,7 @@ let createContent = function () {
 
         for (let numberOfAdSlot = 0; numberOfAdSlot < 3; numberOfAdSlot++) {
 
-            let randNo = Math.floor(Math.random() * 14);
+            let randNo = Math.floor(Math.random() * templateAds.medium.length);
 
             let contentAdFrame = dom.createElementWithClassName('div', 'content__ad__frame row__xs-12 row__s-6 row__md-4 row__lg-4'),
                 contentAdFrameImage = dom.createElementWithClassName('img', 'content__ad__frame--image'),
@@ -37,7 +37,9 @@ let createContent = function () {
             // SET URL LINK INTO IMAGE //
             contentAdFrameImageLink.href = templateAds.medium[randNo].linkUrl;
             contentAdFrameImageLink.setAttribute('target', '_blank');
+            contentAdFrameImageLink.setAttribute('title', templateAds.medium[randNo].alt);
             contentAdFrameImage.src = templateAds.medium[randNo].imgUrl;
+            contentAdFrameImage.alt = templateAds.medium[randNo].alt;
 
             dom.append(contentAd, contentAdFrame);
             dom.append(contentAdFrame, contentAdFrameImageLink);
@@ -52,7 +54,7 @@ let createContent = function () {
         let contentAd = dom.createElementWithClassName('div', 'content__ad row');
         dom.append(content, contentAd);
 
-        let randNo = Math.floor(Math.random() * 6);
+        let randNo = Math.floor(Math.random() * templateAds.large.length);
 
         let contentAdFrame = dom.createElementWithClassName('div', 'content__ad__frame content__ad__frame--margin-bottom row__xs-12'),
             contentAdFrameImage = dom.createElementWithClassName('img', 'content__ad__frame--image'),
@@ -61,7 +63,11 @@ let createContent = function () {
         // SET URL LINK INTO IMAGE //
         contentAdFrameImageLink.href = templateAds.large[randNo].linkUrl;
         contentAdFrameImageLink.setAttribute('target', '_blank');
+        contentAdFrameImageLink.setAttribute('title', templateAds.large[randNo].alt)
+
         contentAdFrameImage.src = templateAds.large[randNo].imgUrl;
+        contentAdFrameImage.alt = templateAds.large[randNo].alt;
+        
 
         dom.append(contentAd, contentAdFrame);
         dom.append(contentAdFrame, contentAdFrameImageLink);
@@ -93,13 +99,11 @@ let createContent = function () {
         dom.setTextContent(`${offer.classname}__title`, offer.main);
         dom.setTextContent(`${offer.classname}__description`, offer.desc);
 
-        // IF IT'S NOT MAIN PAGE BUT SECTIONS LOAD FILTER SELECT DROP DOWNS //
+        // IF IT'S NOT MAIN PAGE BUT SECTIONS CREATE FILTER SELECT DROP DOWNS //
         if (!isMainPage) {
             let filterFrame = dom.createElementWithClassName('div', 'content__galery__info__filter row'),
                 filterFrameLeft = dom.createElementWithClassName('div', 'content__galery__info__filter-left row__xs-6 '),
-                //filterFrameLeftSort = dom.createElementWithClassName('div', 'content__galery__info__filter__sort'),
                 filterFrameRight = dom.createElementWithClassName('div', 'content__galery__info__filter-right row__xs-6 ');
-            //filterFrameRightCategory = dom.createElementWithClassName('div', 'content__galery__info__filter__category');
 
             dom.append(contentGaleryInfo, filterFrame);
             dom.append(filterFrame, filterFrameLeft, filterFrameRight);
@@ -141,7 +145,10 @@ let createContent = function () {
             // SET URL LINK INTO IMAGE //
             contentGaleryOfferTopFrameImageLink.href = offer[i].link;
             contentGaleryOfferTopFrameImageLink.setAttribute('target', '_blank');
+            contentGaleryOfferTopFrameImageLink.title = `${offer[i].statement} ${offer[i].description}`;
+            
             contentGaleryOfferTopFrameImage.src = offer[i].imageURL;
+            contentGaleryOfferTopFrameImage.alt = `${offer[i].statement} ${offer[i].description}`;
 
             // APPEND TOP PART OF THE OFFER INTO CONTENT-GALERY-OFFER //
             dom.append(contentGaleryOffer, contentGaleryOfferTop);
