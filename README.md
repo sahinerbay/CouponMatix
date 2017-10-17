@@ -1,1 +1,1 @@
-# moms-couponmatic
+# CouponMatix
