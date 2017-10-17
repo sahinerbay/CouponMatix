@@ -44,10 +44,13 @@ for (let element of navLinks) {
         // MENU ON RESPONSIVE MODE //
         // COLLAPSE MENU BAR AFTER CLICK ON ANY SECTION LINK //
         let menu = document.querySelector(".navbar__menu__links"),
-            wrapper = document.querySelector('.wrapper');
+            wrapper = document.querySelector('.wrapper'),
+            menuFlex = document.querySelector('.navbar__menu__links--flex');
+
         if (menu.className === "navbar__menu__links responsive") {
             menu.className = "navbar__menu__links"
             wrapper.className = 'wrapper wrapper--margin-top';
+            menuFlex.classList.remove('navbar__menu__links--block');
         }
 
     });

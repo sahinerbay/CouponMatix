@@ -16,32 +16,25 @@ createContent.ads();
 let homeLink = document.querySelector('.navbar__menu__links a');
 homeLink.className = "navbar__menu__links__active";
 
-// const mq = window.matchMedia( "(min-width: 500px)" );
-
-// if (mq.matches) {
-//     console.log('more than 500px')
-//   } else {
-//     console.log('less than 500px')
-//   }
-
-window.addEventListener('scroll', (() => {
+//  WHEN SCROLLED SMALLEN THE LOGO AND FILTER BAR HEIGHT //
+window.addEventListener('scroll', () => {
 
     let scrolled = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
     let logo = dom.getElement('narbar__logo__link__image'),
-        navbar = dom.getElement('navbar');
+        navbar = dom.getElement('navbar'),
+        filterbar = dom.getElement('filterbar--content');
 
+    // CHECK THE SCREEN SIZE AND APPLY SMALLEN TASK STARTING FROM MEDIUM SCREEN //
     const mq = window.matchMedia("(min-width: 800px)");
 
     if (mq.matches) {
         if (scrolled === 0) {
             logo.src = '/images/logo.jpg';
-            navbar.classList.add('navbar--margin-bottom');
+            filterbar.classList.remove('filterbar--thin');
         } else {
             logo.src = '/images/logo--small.png';
-            navbar.classList.remove('navbar--margin-bottom');
+            filterbar.classList.add('filterbar--thin');
         }
     }
 
-
-})
-);
+});

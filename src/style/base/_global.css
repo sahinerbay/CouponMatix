@@ -31,7 +31,7 @@ body:before {
 }
 
 .wrapper--margin {
-    margin: 80px 0 300px;
+    margin: 80px 0 400px;
     min-height: 1000px;
     
     @mixin medium {
@@ -40,5 +40,5 @@ body:before {
 }
 
 .wrapper--margin-top-extra {
-    margin-top: 280px;
+    margin-top: 315px;
 }

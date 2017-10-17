@@ -67,7 +67,7 @@ let createContent = function () {
 
         contentAdFrameImage.src = templateAds.large[randNo].imgUrl;
         contentAdFrameImage.alt = templateAds.large[randNo].alt;
-        
+
 
         dom.append(contentAd, contentAdFrame);
         dom.append(contentAdFrame, contentAdFrameImageLink);
@@ -102,11 +102,24 @@ let createContent = function () {
         // IF IT'S NOT MAIN PAGE BUT SECTIONS CREATE FILTER SELECT DROP DOWNS //
         if (!isMainPage) {
             let filterFrame = dom.createElementWithClassName('div', 'content__galery__info__filter row'),
-                filterFrameLeft = dom.createElementWithClassName('div', 'content__galery__info__filter-left row__xs-6 '),
-                filterFrameRight = dom.createElementWithClassName('div', 'content__galery__info__filter-right row__xs-6 ');
+                filterFrameLeft = dom.createElementWithClassName('div', 'content__galery__info__filter-left row__xs-3 row__s-6 '),
+                filterFrameRight = dom.createElementWithClassName('div', 'content__galery__info__filter-right row__xs-9 row__s-6');
 
             dom.append(contentGaleryInfo, filterFrame);
             dom.append(filterFrame, filterFrameLeft, filterFrameRight);
+
+            // SET FILTER-SELECT BAR STICKY ONSCROLL //
+            window.addEventListener('scroll', () => {
+
+                let scrolled = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+                let filterBar = dom.getElement('content__galery__info__filter');
+
+                if (scrolled > 300) {
+                    filterBar.classList.add('content__galery__info__filter--fixed');
+                } else if (scrolled <= 299) {
+                    filterBar.classList.remove('content__galery__info__filter--fixed');
+                }
+            });
         }
     };
 
@@ -146,7 +159,7 @@ let createContent = function () {
             contentGaleryOfferTopFrameImageLink.href = offer[i].link;
             contentGaleryOfferTopFrameImageLink.setAttribute('target', '_blank');
             contentGaleryOfferTopFrameImageLink.title = `${offer[i].statement} ${offer[i].description}`;
-            
+
             contentGaleryOfferTopFrameImage.src = offer[i].imageURL;
             contentGaleryOfferTopFrameImage.alt = `${offer[i].statement} ${offer[i].description}`;
 
@@ -194,7 +207,7 @@ let createContent = function () {
 
             // SET ATTRIBUTES OF VIEW LINK ELEMENT //
             let contentGaleryViewAllLinkAttribute = {
-                "href": `#${offerClassname}`
+                "href": `#${offerClassname}`,
             };
             dom.setAttributes(contentGaleryViewAllLink, contentGaleryViewAllLinkAttribute);
 
@@ -206,11 +219,21 @@ let createContent = function () {
             dom.setTextContent(`${offerClassname}--link`, "View All");
             let viewLinkButton = document.querySelector(`.${offerClassname}--link`);
 
-            viewLinkButton.addEventListener('click', (e) => {
+
+            // WHEN YOU CLICK ON 'viewAll' BUTTON //
+            viewLinkButton.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                createContent.createPage(offerTypeId);
+                // ADD ACTIVE STYLE FOR CLICKED SECTION //
+                let activeLink = document.querySelector(`a[href='#${offerClassname}']`);
+                activeLink.className = "navbar__menu__links__active";
 
+                // REMOVE ACTIVE STYLE FROM HOME PAGE //
+                let activeHome = document.querySelector(`a[title='Home']`);
+                activeHome.classList.remove("navbar__menu__links__active");
+
+                // LOAD THE OFFERS //
+                createContent.createPage(offerTypeId);
             })
         }
     }
@@ -222,6 +245,9 @@ let createContent = function () {
     // WHEN 'VIEWALL', NAVBAR LINK OR FILTER CATEGORY SELECTED //
     // NOT USED FOR MAIN PAGE //
     let createContentSidePage = (type) => {
+
+        // SCROLL ALL THE WAY UP WHEN THE CONTENT LOADS //
+        window.scrollTo(0, 0);
 
         // GENERATE ADDRESS TO ACQUIRE OFFER INFO & DESCRIPTION 
         let url = `https://couponmatix.firebaseio.com/v0/types/${type}.json`;
@@ -277,6 +303,9 @@ let createContent = function () {
     // DOESN'T DEAL WITH OTHER COMPONENTS OF THE PAGE //
     let createContentViaFiltering = (type, filterQuery) => {
 
+        // SCROLL TO CONTENT--GALERY--INFO-H2-TITLE WHEN THE CONTENT LOADS //
+        window.scrollTo(0, 200);
+
         // GENERATE ADDRESS TO ACQUIRE OFFER STATEMENT, IMAGE & LINK URL //
         let url = `https://couponmatix.firebaseio.com/v0/items/${type}.json`;
 
@@ -318,6 +347,9 @@ let createContent = function () {
     // ONLY LOADS CONTENT--GALERY--CONTAINER //
     // DOESN'T DEAL WITH OTHER COMPONENTS OF THE PAGE //
     let createContentViaSorting = (sortQuery) => {
+
+        // SCROLL TO CONTENT--GALERY--INFO-H2-TITLE WHEN THE CONTENT LOADS //
+        window.scrollTo(0, 200);
 
         // EMPTY CONTENT ELEMENT //
         let contentGaleryContainer = dom.getElement('content__galery__container');

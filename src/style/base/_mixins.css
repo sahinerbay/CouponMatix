@@ -54,6 +54,9 @@
     border-radius: 4px;
     color: #737171;
     text-transform: capitalize;
+    padding: 5px;
+    font-size: .9rem;
+    font-weight: 700;
 }
 
 /* -Content Description and Title- */

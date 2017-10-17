@@ -44,9 +44,32 @@ let filterBar = function () {
         let filterbarContent = dom.getElement('filterbar--content');
         dom.append(filterbarContent, filterbarSearch);
 
-        // CREATE SEARCH BAR ICON //
-        let filterbarSearchIcon = dom.createElementWithClassName('span', 'filterbar__searchbar__icon');
-        dom.append(filterbarContent, filterbarSearchIcon);
+        // CREATE SEARCH BAR BUTTON //
+        let filterbarSearchButton = dom.createElementWithClassName('button', 'filterbar__searchbar__button'),
+            filterbarSearchButtonIcon = dom.createElementWithClassName('i', 'filterbar__searchbar__button__icon');
+
+        filterbarSearchButtonIcon.innerHTML = '&#9906;';
+
+        // SET ATTRIBUTES FOR BUTTON //
+        let filterSearchButtonAttributes = {
+            'type': 'submit'
+        };
+        dom.setAttributes(filterbarSearchButton, filterSearchButtonAttributes);
+
+        // INSERT SEARCH BUTTON INTO FILTER BAR //
+        dom.append(filterbarContent, filterbarSearchButton);
+        dom.append(filterbarSearchButton, filterbarSearchButtonIcon);
+
+        let searchbar = dom.getElement('filterbar__searchbar');
+        searchbar.focus();
+
+        searchbar.addEventListener('focus', function () {
+            this.removeAttribute('placeholder')
+        });
+
+        searchbar.addEventListener('blur', function () {
+            this.setAttribute('placeholder', 'Search For Coupons: Yoplait, Ziploc, Downy, Detergent...')
+        });
     };
 
     // FUNCTION TO GENERATE SELECT DROPDOWN //
@@ -57,7 +80,7 @@ let filterBar = function () {
             filterbarSelectTitle = dom.createElementWithClassName('span', 'filterbar__select--title');
 
         filterbarSelectTitle.textContent = "Categories:";
-            
+
 
         // SET ATTRIBUTES FOR SELECT DROPDOWN //
         let filterSelectAttributes = {
