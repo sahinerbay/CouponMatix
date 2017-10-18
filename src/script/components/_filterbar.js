@@ -1,4 +1,5 @@
 import dom from '../utils/_dom';
+import searchOffers from '../utils/search';
 import createContent from './_content';
 
 let filterBar = function () {
@@ -60,11 +61,19 @@ let filterBar = function () {
         dom.append(filterbarContent, filterbarSearchButton);
         dom.append(filterbarSearchButton, filterbarSearchButtonIcon);
 
+        // CREATE SEARCH RESULT UL //
+        let filterbarSearchResults = dom.createElementWithClassName('ul', 'filterbar__searchbar__result');
+
+        // INSERT SEARCH RESULT INTO FILTERBAR--CONTENT //
+        dom.append(filterbarContent, filterbarSearchResults);
+
         let searchbar = dom.getElement('filterbar__searchbar');
+
+        searchOffers(searchbar);
         searchbar.focus();
 
         searchbar.addEventListener('focus', function () {
-            this.removeAttribute('placeholder')
+            this.removeAttribute('placeholder');
         });
 
         searchbar.addEventListener('blur', function () {

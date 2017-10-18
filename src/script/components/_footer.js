@@ -21,42 +21,42 @@ let createFooter = () => {
             'title': 'Facebook',
             'linkUrl': 'www.facebook.com',
             'alt': '',
-            'imgUrl': '/images/facebook.png'
+            'imgUrl': './images/facebook.png'
 
         },
         {
             'title': 'Twitter',
             'linkUrl': 'www.twitter.com',
             'alt': '',
-            'imgUrl': '/images/twitter.png'
+            'imgUrl': './images/twitter.png'
 
         },
         {
             'title': 'Instagram',
             'linkUrl': 'www.instagram.com',
             'alt': '',
-            'imgUrl': '/images/instagram.png'
+            'imgUrl': './images/instagram.png'
 
         },
         {
             'title': 'Google Plus',
             'linkUrl': 'www.google.com',
             'alt': '',
-            'imgUrl': '/images/google.png'
+            'imgUrl': './images/google.png'
 
         },
         {
             'title': 'Pinterest',
             'linkUrl': 'www.pinterest.com',
             'alt': '',
-            'imgUrl': '/images/pinterest.png'
+            'imgUrl': './images/pinterest.png'
 
         },
         {
             'title': 'Linkedin',
             'linkUrl': 'www.linkedin.com',
             'alt': '',
-            'imgUrl': '/images/linkedin.png'
+            'imgUrl': './images/linkedin.png'
 
         }
     ];

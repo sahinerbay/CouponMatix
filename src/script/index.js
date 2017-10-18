@@ -13,3 +13,5 @@ import './components/_content';
 import './pages/_main';
 import './pages/_sections';
 
+// ** UTIL ** //
+import './utils/search';

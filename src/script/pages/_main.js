@@ -29,10 +29,10 @@ window.addEventListener('scroll', () => {
 
     if (mq.matches) {
         if (scrolled === 0) {
-            logo.src = '/images/logo.jpg';
+            logo.src = './images/logo.jpg';
             filterbar.classList.remove('filterbar--thin');
         } else {
-            logo.src = '/images/logo--small.png';
+            logo.src = './images/logo--small.png';
             filterbar.classList.add('filterbar--thin');
         }
     }

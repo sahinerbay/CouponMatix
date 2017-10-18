@@ -83,7 +83,7 @@ for (let attributes in linksArr) {
 let mobileLogoFrame = dom.createElementWithClassName('div', 'navbar__menu__links__mobileLogo-frame'),
     mobileLogoImage = dom.createElementWithClassName('img', 'navbar__menu__links__mobileLogo-image');
 
-mobileLogoImage.src = "/images/logo--small.png";
+mobileLogoImage.src = "./images/logo--small.png";
 
 // INSERT LOGO INTO NAVBAR--MENU--LINKS
 dom.append(mobileLogoFrame, mobileLogoImage);

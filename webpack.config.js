@@ -1,17 +1,18 @@
-const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const webpack = require('webpack');
+const path = require('path'),
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    CleanWebpackPlugin = require('clean-webpack-plugin'),
+    BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
+    CopyWebpackPlugin = require('copy-webpack-plugin'),
+    ImageminPlugin = require('imagemin-webpack-plugin').default,
+    webpack = require('webpack'),
+    UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
 
 module.exports = {
     entry: ["babel-polyfill", "./src/script/index.js"],
-    //devtool: 'inline-source-map',
+    devtool: 'inline-source-map',
     devServer: {
         contentBase: './build',
         hot: true
@@ -81,7 +82,8 @@ module.exports = {
                 // and let Webpack Dev Server take care of this 
                 reload: false
             }
-        )
+        ),
+        new UglifyJSPlugin()
     ],
     output: {
         filename: 'bundle.js',
