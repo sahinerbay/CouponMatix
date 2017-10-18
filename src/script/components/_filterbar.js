@@ -45,22 +45,6 @@ let filterBar = function () {
         let filterbarContent = dom.getElement('filterbar--content');
         dom.append(filterbarContent, filterbarSearch);
 
-        // CREATE SEARCH BAR BUTTON //
-        let filterbarSearchButton = dom.createElementWithClassName('button', 'filterbar__searchbar__button'),
-            filterbarSearchButtonIcon = dom.createElementWithClassName('i', 'filterbar__searchbar__button__icon');
-
-        filterbarSearchButtonIcon.innerHTML = '&#9906;';
-
-        // SET ATTRIBUTES FOR BUTTON //
-        let filterSearchButtonAttributes = {
-            'type': 'submit'
-        };
-        dom.setAttributes(filterbarSearchButton, filterSearchButtonAttributes);
-
-        // INSERT SEARCH BUTTON INTO FILTER BAR //
-        dom.append(filterbarContent, filterbarSearchButton);
-        dom.append(filterbarSearchButton, filterbarSearchButtonIcon);
-
         // CREATE SEARCH RESULT UL //
         let filterbarSearchResults = dom.createElementWithClassName('ul', 'filterbar__searchbar__result');
 
@@ -74,10 +58,12 @@ let filterBar = function () {
 
         searchbar.addEventListener('focus', function () {
             this.removeAttribute('placeholder');
+            this.style.backgroundImage = "url('./images/searchiconhover.png')";
         });
 
         searchbar.addEventListener('blur', function () {
-            this.setAttribute('placeholder', 'Search For Coupons: Yoplait, Ziploc, Downy, Detergent...')
+            this.setAttribute('placeholder', 'Search For Coupons: Yoplait, Ziploc, Downy, Detergent...');
+            this.style.backgroundImage = "url('./images/searchicon.png')";
         });
     };
 

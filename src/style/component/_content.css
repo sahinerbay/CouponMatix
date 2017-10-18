@@ -79,6 +79,10 @@
         flex-wrap: wrap;
     }
 
+    &__galery__container__not-found {
+        max-width: 100%;
+    }
+
     &__galery__offer--side {
         border-bottom: 1px solid #c6c6c6;
     }

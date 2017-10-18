@@ -109,17 +109,7 @@ let createContent = function () {
             dom.append(filterFrame, filterFrameLeft, filterFrameRight);
 
             // SET FILTER-SELECT BAR STICKY ONSCROLL //
-            window.addEventListener('scroll', () => {
-
-                let scrolled = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
-                let filterBar = dom.getElement('content__galery__info__filter');
-
-                if (scrolled > 300) {
-                    filterBar.classList.add('content__galery__info__filter--fixed');
-                } else if (scrolled <= 299) {
-                    filterBar.classList.remove('content__galery__info__filter--fixed');
-                }
-            });
+            window.addEventListener('scroll', dom.handleScroll);
         }
     };
 
@@ -132,9 +122,6 @@ let createContent = function () {
         // RETRIEVE CLASSNAME OF EACH TYPE (COUPONS, SAMPLES, GIVEAWAYS) //
         let offerClassname = offer[0].classname;
 
-        // RETRIEVE TYPE ID OF EACH TYPE (COUPONS, SAMPLES, GIVEAWAYS) //
-        let offerTypeId = offer[0].id;
-
         // USE THE RETRIEVED CLASSNAME IN ORDER TO RETRIEVE DEDICATED CONTENT GALERY TO EACH SECTION //
         let contentGalery = dom.getElement(`${offerClassname}__galery`);
 
@@ -144,52 +131,7 @@ let createContent = function () {
 
         // LOOP THROUGH RESPONSE OBJECT (WHICH IS ARRAY NOW, AFTER PARSED FROM JSON) //
         for (let i = 0; i < offer.length; i++) {
-
-            // CREATE ROW AND APPEND INTO CONTENT-GALERY //
-            let contentGaleryOffer = dom.createElementWithClassName('div', 'content__galery__offer content__galery__offer--side  content__galery__offer--padding row__xs-12 row__s-6 row__md-4 row__lg-3');
-            dom.append(contentGaleryContainer, contentGaleryOffer);
-
-            // GENERATE TOP PART (IMAGE & ITS FRAME) OF EACH OFFER // 
-            let contentGaleryOfferTop = dom.createElementWithClassName('div', 'content__galery__offer__top content__galery__offer__top--margin-bottom'),
-                contentGaleryOfferTopFrame = dom.createElementWithClassName('div', 'content__galery__offer__top__frame'),
-                contentGaleryOfferTopFrameImage = dom.createElementWithClassName('img', 'content__galery__offer__top__frame--image'),
-                contentGaleryOfferTopFrameImageLink = dom.createElementWithClassName('a', 'content__galery__offer__top__frame--image__link');
-
-            // SET URL LINK INTO IMAGE //
-            contentGaleryOfferTopFrameImageLink.href = offer[i].link;
-            contentGaleryOfferTopFrameImageLink.setAttribute('target', '_blank');
-            contentGaleryOfferTopFrameImageLink.title = `${offer[i].statement} ${offer[i].description}`;
-
-            contentGaleryOfferTopFrameImage.src = offer[i].imageURL;
-            contentGaleryOfferTopFrameImage.alt = `${offer[i].statement} ${offer[i].description}`;
-
-            // APPEND TOP PART OF THE OFFER INTO CONTENT-GALERY-OFFER //
-            dom.append(contentGaleryOffer, contentGaleryOfferTop);
-            dom.append(contentGaleryOfferTop, contentGaleryOfferTopFrame);
-            dom.append(contentGaleryOfferTopFrame, contentGaleryOfferTopFrameImageLink);
-            dom.append(contentGaleryOfferTopFrameImageLink, contentGaleryOfferTopFrameImage);
-
-
-            // GENERATE FOOTER PART (STATEMENT, DESCRIPTION, BUTTON) OF EACH OFFER // 
-            let contentGaleryOfferFooter = dom.createElementWithClassName('div', 'content__galery__offer__footer'),
-                contentGaleryOfferFooterDescription = dom.createElementWithClassName('div', `${offerClassname}__offer__description content__galery__offer__footer__description`),
-                contentGaleryOfferFooterButton = dom.createElementWithClassName('div', 'content__galery__offer__footer__button'),
-                contentGaleryOfferFooterButtonLink = dom.createElementWithClassName('a', `${offerClassname}__link content__galery__offer__footer__button__link`);
-
-            // SET URL LINK INTO BUTTON //
-            contentGaleryOfferFooterButtonLink.href = offer[i].link;
-            contentGaleryOfferFooterButtonLink.textContent = "+";
-            contentGaleryOfferFooterButtonLink.setAttribute('target', '_blank');
-
-            // APPEND FOOTER PART (STATEMENT, DESCRIPTION, BUTTON) OFFER INTO CONTENT-GALERY-OFFER //
-            dom.append(contentGaleryOfferFooterButton, contentGaleryOfferFooterButtonLink);
-            dom.append(contentGaleryOfferFooter, contentGaleryOfferFooterDescription, contentGaleryOfferFooterButton);
-            dom.append(contentGaleryOffer, contentGaleryOfferFooter);
-
-            // SET STATEMENT & DESCRIPTION OF EACH OFFER VIA JSON CLASSNAME DYNAMICALLY BASED ON WHICH SECTION (COUPONS, SAMPLES, GIVEAWAYS) //
-            dom.setTextContent(`${offerClassname}__link`, offer[i].statement, i);
-            dom.setTextContent(`${offerClassname}__offer__description`, offer[i].description, i);
-
+            dom.createContentGaleryOffer(contentGaleryContainer, offer[i], i, offerClassname);
         }//END OF LOOP//
 
 
@@ -231,6 +173,9 @@ let createContent = function () {
                 // REMOVE ACTIVE STYLE FROM HOME PAGE //
                 let activeHome = document.querySelector(`a[title='Home']`);
                 activeHome.classList.remove("navbar__menu__links__active");
+
+                // RETRIEVE TYPE ID OF EACH TYPE (COUPONS, SAMPLES, GIVEAWAYS) //
+                let offerTypeId = offer[0].id;
 
                 // LOAD THE OFFERS //
                 createContent.createPage(offerTypeId);
@@ -304,7 +249,11 @@ let createContent = function () {
     let createContentViaFiltering = (type, filterQuery) => {
 
         // SCROLL TO CONTENT--GALERY--INFO-H2-TITLE WHEN THE CONTENT LOADS //
-        window.scrollTo(0, 200);
+        // SCROLL TO CONTENT--GALERY--INFO-H2-TITLE WHEN THE CONTENT LOADS //
+        let scrolled = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+        if(scrolled > 350) {
+            window.scrollTo(0, 200);
+        }
 
         // GENERATE ADDRESS TO ACQUIRE OFFER STATEMENT, IMAGE & LINK URL //
         let url = `https://couponmatix.firebaseio.com/v0/items/${type}.json`;
@@ -349,7 +298,10 @@ let createContent = function () {
     let createContentViaSorting = (sortQuery) => {
 
         // SCROLL TO CONTENT--GALERY--INFO-H2-TITLE WHEN THE CONTENT LOADS //
-        window.scrollTo(0, 200);
+        let scrolled = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+        if(scrolled > 350) {
+            window.scrollTo(0, 200);
+        }
 
         // EMPTY CONTENT ELEMENT //
         let contentGaleryContainer = dom.getElement('content__galery__container');
@@ -457,7 +409,7 @@ let createContent = function () {
                                 let offerDetails = JSON.parse(result);
 
                                 // LIMIT HOW MANY OFFERS WILL BE RENDERED ON MAIN PAGE FOR EACH SECTION (COUPONS, SAMPLES, GIVEAWAYS) //
-                                let limitedOffers = offerDetails.slice(0, 4);
+                                let limitedOffers = offerDetails.reverse().slice(0, 4);
                                 createContent.galery(limitedOffers, true);
                                 resolve('success');
                             })
