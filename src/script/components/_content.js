@@ -392,7 +392,8 @@ let createContent = function () {
             .then((result) => {
                 // PARSE JSON INTO JS OBJECT //
                 let offer = JSON.parse(result);
-                filterbar.searchbar()
+                filterbar.searchbar();
+
                 // LOOP THROUGH 'offer' OBJECTS PROPERTIES //
                 // GENERATES ALL THREE SECTIONS (COUPONS, SAMPLES, GIVEAWAYS) //
                 // RETURNS PROMISE BECAUSE WE NEED FOOTER TO LOAD AFTER THE CONTENT IS LOADED //

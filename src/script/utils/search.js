@@ -9,6 +9,14 @@ let searchOffers = (el) => {
 
     el.addEventListener('keyup', function (e) {
 
+        searchbar.style.backgroundImage = "url('./images/clearsearchicon.png')";
+        searchbar.addEventListener('click', ()=> {
+            e.target.textContent = "";
+            e.target.value = "";
+            searchbar.style.backgroundImage = "url('./images/searchiconhover.png')";
+            location.reload();
+        });
+
         let input_val = this.value;
 
         if (input_val.length > 0) {
@@ -72,7 +80,6 @@ let searchOffers = (el) => {
         } else {
             dom.removeElement(search_results);
             search_results.style.display = 'none';
-            //location.reload();
 
             // EMPTY CONTENT ELEMENT //
             let content = dom.getElement('content');
@@ -107,9 +114,9 @@ let showResults = (offer) => {
     dom.append(content_galery[0], content_galery_container);
 
     if (offer.length === 0) {
-        let image = dom.createElementWithClassName('img', 'content__galery__container__not-found');
-        image.src = './images/notFound.gif';
-        dom.append(content_galery_container, image);
+        let para = dom.createElementWithClassName('p', 'content__galery__container__not-found');
+        para.textContent = "Sorry. Offer Not Found!"
+        dom.append(content_galery_container, para);
     } else {
         if (!Array.isArray(offer)) {
             dom.createContentGaleryOffer(content_galery_container, offer);

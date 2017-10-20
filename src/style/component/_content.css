@@ -80,7 +80,9 @@
     }
 
     &__galery__container__not-found {
-        max-width: 100%;
+        font-size: 2rem;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
     }
 
     &__galery__offer--side {
@@ -123,10 +125,12 @@
     &__galery__offer__footer__description {
         @mixin offerFooterInfo $fontSizeOfferFooterDescription;
         min-height: 37px;
+        text-transform: capitalize;
     }
 
     &__galery__offer__footer__button__link {
         @mixin offerButton;
+        text-transform: capitalize;
     }
 
     &__galery__viewAll {
@@ -222,7 +226,7 @@
 
         &__galery__info__filter--fixed {
             width: $forMedium;
-            top: 85px;
+            top: 95px;
             padding: 12px 2px 5px 0;
         }
     }

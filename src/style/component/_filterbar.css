@@ -44,7 +44,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-image: url(/images/searchiconhover.png);
+        background-image: url("/images/searchicon.png");
         background-position: 5px 6px;
         background-repeat: no-repeat;
     }

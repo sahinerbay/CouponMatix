@@ -12,7 +12,11 @@ const path = require('path'),
 
 module.exports = {
     entry: ["babel-polyfill", "./src/script/index.js"],
-    
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './build',
+        hot: true
+    },
     module: {
         rules: [{
             test: /\.js$/,
@@ -79,7 +83,7 @@ module.exports = {
                 reload: false
             }
         ),
-        new UglifyJSPlugin()
+        //new UglifyJSPlugin()
     ],
     output: {
         filename: 'bundle.js',

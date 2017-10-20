@@ -19,42 +19,42 @@ let createFooter = () => {
     let socialIconsList = [
         {
             'title': 'Facebook',
-            'linkUrl': 'www.facebook.com',
+            'linkUrl': 'http://www.facebook.com',
             'alt': '',
             'imgUrl': './images/facebook.png'
 
         },
         {
             'title': 'Twitter',
-            'linkUrl': 'www.twitter.com',
+            'linkUrl': 'http://www.twitter.com',
             'alt': '',
             'imgUrl': './images/twitter.png'
 
         },
         {
             'title': 'Instagram',
-            'linkUrl': 'www.instagram.com',
+            'linkUrl': 'http://www.instagram.com',
             'alt': '',
             'imgUrl': './images/instagram.png'
 
         },
         {
             'title': 'Google Plus',
-            'linkUrl': 'www.google.com',
+            'linkUrl': 'http://www.google.com',
             'alt': '',
             'imgUrl': './images/google.png'
 
         },
         {
             'title': 'Pinterest',
-            'linkUrl': 'www.pinterest.com',
+            'linkUrl': 'http://www.pinterest.com',
             'alt': '',
             'imgUrl': './images/pinterest.png'
 
         },
         {
             'title': 'Linkedin',
-            'linkUrl': 'www.linkedin.com',
+            'linkUrl': 'http://www.linkedin.com',
             'alt': '',
             'imgUrl': './images/linkedin.png'
 

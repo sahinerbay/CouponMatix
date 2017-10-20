@@ -54,7 +54,6 @@ let filterBar = function () {
         let searchbar = dom.getElement('filterbar__searchbar');
 
         searchOffers(searchbar);
-        searchbar.focus();
 
         searchbar.addEventListener('focus', function () {
             this.removeAttribute('placeholder');

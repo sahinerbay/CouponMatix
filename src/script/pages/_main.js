@@ -36,5 +36,10 @@ window.addEventListener('scroll', () => {
             filterbar.classList.add('filterbar--thin');
         }
     }
-
 });
+
+window.addEventListener('click', (e)=> {
+    if(e.target.className !== 'filterbar__searchbar' || e.target.className !== 'filterbar__searchbar__result') {
+        dom.getElement('filterbar__searchbar__result').style.display= 'none';
+    }
+})
