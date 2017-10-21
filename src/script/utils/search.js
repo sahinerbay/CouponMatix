@@ -14,7 +14,7 @@ let searchOffers = (el) => {
             e.target.textContent = "";
             e.target.value = "";
             searchbar.style.backgroundImage = "url('./images/searchiconhover.png')";
-            location.reload();
+            
         });
 
         let input_val = this.value;

@@ -46,12 +46,13 @@
     }
 
     &__menu__links__hamburgerIcon {
-        padding-left: 5px;
+        padding: 14px 0 14px 5px;
         text-decoration: none;
         font-size: 2rem;
         letter-spacing: .15vw;
         align-self: center;
         color: black;
+        background: #fff;
         transition: .5s transform;
         &:hover {
             cursor: pointer;
@@ -65,7 +66,7 @@
     &__menu__links.responsive .navbar__menu__links__hamburgerIcon {
         position: absolute;
         right: 0;
-        top: 17px;
+        top: 0;
     }
     &__menu__links.responsive a {
         float: none;
